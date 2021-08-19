@@ -1,18 +1,4 @@
-@font-face{
-  font-family: Rubik;
-  src: url('../assets//fonts/Rubik-Bold.ttf');
-  font-weight: bold;
-  font-style: bold;
-}
-
-@font-face{
-  font-family: Rubik;
-  src: url('../assets//fonts/Rubik-Regular.ttf');
-}
-
 body {
-  font-family: Rubik;
-  font-weight: normal;
   height: 100vmax;
 }
 
