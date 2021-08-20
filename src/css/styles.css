@@ -13,8 +13,8 @@
 }
 
 :root {
-  --primary-color: #e2f3f5;
-  --secondary-color: #22d1ee;
+  --primary-color: #22d1ee;
+  --secondary-color: #e2f3f5;
   --bg-image: url(../assets/images/svg/light-theme.svg);
   --font-color-title: #0e153a;
   --font-color-subtitle: #292922;
