@@ -15,7 +15,14 @@
     background-color: #ecebd8;
     
   }
-  .Rfamelfico{
+  .tarjeta-item__titulo{
+      font-size: .6em;
+  }
+
+.tarjeta-item__contenido{
+    font-size: .6em;
+}
+  .Rander{
     height: 100%;
     width: 100%;
     display: flex;
@@ -26,10 +33,11 @@
   .container{
      display: flex;
      gap: 1em;
+     align-items: center;
   }
   
   .tarjeta{
-    /*margin: 3px;*/
+    margin: 3px;
     padding: 2em;
     max-height: 220px;
     display: flex;
@@ -61,7 +69,7 @@
     width: 40px;
     height: 40px;
   }
-  .ramoschiviao{
+  .vander{
     gap: 1em;
     display: flex;
     flex-direction: column;
