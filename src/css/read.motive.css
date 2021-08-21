@@ -1,0 +1,20 @@
+
+.card-menu{
+  flex-direction: row;
+  font-family: sans-serif;
+}
+
+.size{
+  font-size: 100px;
+}
+
+.control-submit{
+  font-size:20px;
+  cursor: pointer;
+}
+
+.control-submit__btn{
+  margin-bottom:10px;
+  width: 40px;
+  height:40px;
+}

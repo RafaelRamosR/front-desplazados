@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIDC - Motivo desplazamiento</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/card.css" />
+  </head>
+  <body>
+    <!-- ( NAVBAR ) -->
+    <nav class="navbar">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="../assets/images/svg/dark-logo.svg">
+        <img src="../assets/images/svg/light-logo.svg" alt="logo" width="50" height="50"/>
+      </picture>
+      <span id="btn-form" class="card-open glass rotate">
+        <img src="../assets/images/svg/close.svg" alt="close icon" />
+      </span>
+    </nav>
+
+    <!-- ( CARD LIST ) -->
+    <main class="cards">
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">1</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Motivo desplazamiento</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">2</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Motivo desplazamiento</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">3</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Motivo desplazamiento</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">4</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Motivo desplazamiento</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">5</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Motivo desplazamiento</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ( FORM MAIN ) -->
+    <div id="form" class="container-form">
+      <form class="form" autocomplete="off">
+        <div class="form__content-logo">
+          <img
+            class="form__logo"
+            src="../assets/images/users.png"
+            alt="form logo"
+          />
+        </div>
+
+        <div class="control-input">
+          <input
+            class="control-input__field"
+            id="name"
+            name="name"
+            placeholder="Motivo desplazamiento"
+            type="text"
+          />
+        </div>
+
+        <div class="control-submit">
+          <input
+            class="btn control-submit__btn"
+            type="submit"
+            value="Aceptar"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script src="../js/utils/form-control.js"></script>
+    <script src="../js/utils/vanilla-tilt.js"></script>
+  </body>
+</html>
