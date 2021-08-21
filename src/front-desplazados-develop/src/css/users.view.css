@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #412945;
+  background-color: var(--primary-color);
 }
 
 .login {
@@ -19,12 +19,11 @@ body {
   align-items: center;
   padding: 2em 0;
   border-radius: 15px;
-  background-color: #2d1d30;
 }
 
 .login__content-logo {
   margin-bottom: 1em;
-  background-color: #a829c3;
+  background-color: var(--secondary-color);
   border-radius: 50%;
   padding: 1em;
 }
@@ -49,6 +48,7 @@ body {
 .control-submit__btn {
   height: 40px;
   border-radius: 5px;
+  font-size: .8rem;
   border: none;
   outline: none;
 }
@@ -60,7 +60,7 @@ body {
 
 .control-submit__btn {
   width: 100%;
-  background-color: #a829c3;
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
@@ -73,7 +73,7 @@ body {
 .control-submit__btn,
 .container-text__title,
 .container-text__subtitle {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--font-color-subtitle);
 }
 
 .container-text__title {
