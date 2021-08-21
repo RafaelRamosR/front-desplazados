@@ -1,22 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desplazados app - Usuarios</title>
+    <title>SIDC - Usuarios</title>
     <link rel="stylesheet" href="../css/normalize.css" />
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/users.view.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/card.css" />
   </head>
   <body>
-    <main class="container-login">
-      <form class="login" autocomplete="off">
-        <div class="login__content-logo">
+    <!-- ( NAVBAR ) -->
+    <nav class="navbar">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="../assets/images/svg/dark-logo.svg">
+        <img src="../assets/images/svg/light-logo.svg" alt="logo" width="50" height="50"/>
+      </picture>
+      <span id="btn-form" class="card-open glass rotate">
+        <img src="../assets/images/svg/close.svg" alt="close icon" />
+      </span>
+    </nav>
+
+    <!-- ( CARD LIST ) -->
+    <main class="cards">
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">1</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">2</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">3</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">4</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">5</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ( FORM MAIN ) -->
+    <div id="form" class="container-form">
+      <form class="form" autocomplete="off">
+        <div class="form__content-logo">
           <img
-            class="login__logo"
+            class="form__logo"
             src="../assets/images/users.png"
-            alt="Login logo"
+            alt="form logo"
           />
         </div>
 
@@ -87,9 +208,11 @@
             type="submit"
             value="Aceptar"
           />
-          <a class="btn control-submit__btn" href="../index.html">Cancelar</a>
         </div>
       </form>
-    </main>
+    </div>
+
+    <script src="../js/utils/form-control.js"></script>
+    <script src="../js/utils/vanilla-tilt.js"></script>
   </body>
 </html>

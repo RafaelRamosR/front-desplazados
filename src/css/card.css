@@ -1,0 +1,89 @@
+.navbar {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  margin-bottom: 2em;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.cards {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.card {
+  min-width: 10rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 1em;
+}
+
+.card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  z-index: 1;
+}
+
+.card-number {
+  position: absolute;
+  top: 0;
+  right: .2em;
+  font-size: 4rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+.card-item__title {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.card-item__content {
+  font-size: 0.6rem;
+  margin: 0;
+}
+
+.card-close,
+.card-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.card-close {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-size: .9rem;
+}
+
+.card-open {
+  transition: transform .3s;
+  z-index: 2;
+}
+
+.rotate {
+  transition: transform .3s;
+  transform: rotate(45deg);
+}
+
+@media screen and (min-width: 900px) {
+  .card-close,
+  .card-open {
+    cursor: pointer;
+  }
+}
