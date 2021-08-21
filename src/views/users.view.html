@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/users.view.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+  <script src="../js/funciones.js" type="text/javascript" charset="utf-8"></script>
+
   </head>
   <body>
     <main class="container-login">
@@ -23,12 +30,15 @@
         <div class="control-input">
           <select
             class="control-input__field"
-            id="identic-type"
-            name="identic-type"
+            id="tipo_documentos"
+            name="tipo_documentos"
           >
-            <option value="1">Cédula de ciudadanía</option>
-            <option value="2">Tarjeta de identidad</option>
+
           </select>
+
+
+
+
           <input
             class="control-input__field"
             id="document-number"
@@ -46,10 +56,9 @@
             placeholder="Nombre completo"
             type="text"
           />
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Femenino</option>
-            <option value="2">Masculino</option>
-            <option value="3">Otro</option>
+
+          <select class="control-input__field" id="sexos" name="sexo">
+
           </select>
         </div>
 
@@ -59,18 +68,14 @@
             name="birthday-date"
             type="date"
           />
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
+          <select class="control-input__field" id="municipios_n" name="municipio_n">
+
           </select>
         </div>
 
         <div class="control-input">
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
+          <select class="control-input__field" id="municipios_r" name="municipio_r">
+
           </select>
           <input
             class="control-input__field"
