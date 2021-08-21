@@ -39,7 +39,7 @@
 .card-number {
   position: absolute;
   top: 0;
-  right: .2em;
+  right: 0.2em;
   font-size: 4rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.5);
@@ -69,20 +69,36 @@
   position: absolute;
   top: -0.5rem;
   left: -0.5rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .card-open {
-  transition: transform .3s;
+  transition: transform 0.3s;
   z-index: 2;
 }
 
 .rotate {
-  transition: transform .3s;
+  transition: transform 0.3s;
   transform: rotate(45deg);
 }
 
-@media screen and (min-width: 900px) {
+.cards::-webkit-scrollbar {
+  height: .5em;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background-color: rgba(151, 171, 178, 0.5);
+  border-radius: 15px;
+  outline: none;
+}
+
+@media screen and (min-width: 650px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+    overflow: visible;
+  }
+
   .card-close,
   .card-open {
     cursor: pointer;
