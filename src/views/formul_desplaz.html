@@ -1,12 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario desplazados</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM - DESPLA</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/card.css" />
+   
 </head>
+
 <body>
-    
+    <nav class="navbar">
+      <img src="../assets/images/svg/logo.svg" alt="logo" width="50" height="50"/>
+      <span id="btn-form" class="card-open glass rotate">
+        <img src="../assets/images/svg/close.svg" alt="close icon" />
+      </span>
+    </nav>
+   <main class="cards">
+      <div class="card glass" data-tilt>
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">1</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">2</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">3</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">4</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card glass">
+        <span class="card-close glass">
+          <img src="../assets/images/svg/close.svg" alt="close icon" />
+        </span>
+        <span class="card-number">5</span>
+        <div class="card-items">
+          <div class="card-item">
+            <h2 class="card-item__title">Nombre completo</h2>
+            <p class="card-item__content">Rafael Ramos Reales</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Residencia</h2>
+            <p class="card-item__content">Soledad, Atlántico</p>
+          </div>
+          <div class="card-item">
+            <h2 class="card-item__title">Fecha de nacimiento</h2>
+            <p class="card-item__content">28/05/1997</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="form" class="container-form active">
+        <form class="form" autocomplete="off">
+            <div class="form__content-logo">
+                <img class="form__logo" src="../assets/images/users.png" alt="form logo" />
+            </div>
+
+            <div class="control-input">
+                <select class="control-input__field" id="persona" name="persona">
+                    <option value="1">Guerrillas Anyis</option>
+                    <option value="2">Paracos RAFAEL</option>
+                    <option value="2">Tierras LEIDY</option>
+                    <option value="2">Amenazas KELLI</option>
+
+                </select>
+                <input class="control-input__field" name="birthday-date" type="date" />
+            </div>
+
+            <div class="control-input">
+                <select class="control-input__field" id="gender" name="gender">
+                    <option value="1">Atlántico - Barranquilla</option>
+                    <option value="2">Bolivar - Cartagena</option>
+                    <option value="3">Cesar - Cesar</option>
+                </select>
+            </div>
+
+            <div class="control-input">
+
+                <select class="control-input__field" id="gender" name="gender">
+                    <option value="1">AMENAZAS DE MUERTE</option>
+                    <option value="2">ESTORCION </option>
+                    <option value="3">DESPOJO - TIERRAS</option>
+                </select>
+            </div>
+
+            <div class="control-input">
+                <textarea class="control-input__field" id="observacion" name="observacion" placeholder="Observacion"
+                    type="text">
+           </textarea>
+            </div>
+
+            <div class="control-submit">
+                <input class="btn control-submit__btn" type="submit" value="Enviar" /> 
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/utils/form-control.js"></script>
+    <script src="../js/utils/vanilla-tilt.js"></script>
 </body>
+
 </html>
