@@ -46,4 +46,8 @@ body {
     --font-color-title: #e2f3f5;
     --font-color-subtitle: #f0f0f0;
   }
+
+  .invert {
+    filter: invert(1);
+  }
 }
