@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="../css/card.css" />
   </head>
   <body>
+    <!-- ( NAVBAR ) -->
     <nav class="navbar">
-      <img src="../assets/images/svg/logo.svg" alt="logo" width="50" height="50"/>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="../assets/images/svg/dark-logo.svg">
+        <img src="../assets/images/svg/light-logo.svg" alt="logo" width="50" height="50"/>
+      </picture>
       <span id="btn-form" class="card-open glass rotate">
         <img src="../assets/images/svg/close.svg" alt="close icon" />
       </span>
     </nav>
+
+    <!-- ( CARD LIST ) -->
     <main class="cards">
       <div class="card glass" data-tilt>
         <span class="card-close glass">
@@ -124,6 +130,7 @@
       </div>
     </main>
 
+    <!-- ( FORM MAIN ) -->
     <div id="form" class="container-form">
       <form class="form" autocomplete="off">
         <div class="form__content-logo">
