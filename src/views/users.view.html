@@ -9,16 +9,14 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
   </head>
   <body>
     <!-- ( NAVBAR ) -->
     <nav class="navbar">
-      <a>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="../assets/images/svg/dark-logo.svg"
-        />
+      <a href="../index.html">
         <img
+          class="invert"
           src="../assets/images/svg/light-logo.svg"
           alt="logo"
           width="50"
@@ -139,7 +137,7 @@
     </main>
 
     <!-- ( FORM MAIN ) -->
-    <div id="form" class="container-form">
+    <section id="form" class="container-form">
       <form class="form" autocomplete="off">
         <div class="form__content-logo">
           <img
@@ -163,6 +161,7 @@
             id="document-number"
             name="document-number"
             placeholder="Número de documento"
+            class="pagination__list-radio"
             type="number"
           />
         </div>
@@ -173,6 +172,7 @@
             id="name"
             name="name"
             placeholder="Nombre completo"
+            class="pagination__list-radio"
             type="text"
           />
           <select class="control-input__field" id="gender" name="gender">
@@ -186,6 +186,7 @@
           <input
             class="control-input__field"
             name="birthday-date"
+            class="pagination__list-radio"
             type="date"
           />
           <select class="control-input__field" id="gender" name="gender">
@@ -206,6 +207,7 @@
             id="direction"
             name="direction"
             placeholder="Dirección de residencia"
+            class="pagination__list-radio"
             type="text"
           />
         </div>
@@ -213,12 +215,36 @@
         <div class="control-submit">
           <input
             class="btn control-submit__btn"
+            class="pagination__list-radio"
             type="submit"
             value="Aceptar"
           />
         </div>
       </form>
-    </div>
+    </section>
+
+    <section class="pagination">
+      <label>
+        <input type="radio" class="pagination__radio" name="pagination" checked />
+        <div class="pagination__design"></div>
+      </label>
+      <label>
+        <input type="radio" class="pagination__radio" name="pagination" />
+        <div class="pagination__design"></div>
+      </label>
+      <label>
+        <input type="radio" class="pagination__radio" name="pagination" />
+        <div class="pagination__design"></div>
+      </label>
+      <label>
+        <input type="radio" class="pagination__radio" name="pagination" />
+        <div class="pagination__design"></div>
+      </label>
+      <label>
+        <input type="radio" class="pagination__radio" name="pagination" />
+        <div class="pagination__design"></div>
+      </label>
+    </section>
 
     <footer class="tabs glass">
       <a href="./users.view.html" class="tab-item">
