@@ -4,6 +4,13 @@ const $ = (e) => document.getElementById(e);
 const fragment = document.createDocumentFragment();
 const cardList = $('card-list');
 const paginate = $('paginate');
+const btnForm = $('btn-form');
+const form = $('form');
+
+const openForm = () => {
+  btnForm.classList.toggle('rotate');
+  form.classList.toggle('active');
+}
 
 const paginateGenerate = (length) => {
   const limit = length / 5;
@@ -35,9 +42,6 @@ const insertCard = async (start = 0, end = 5) => {
     const insertData = data.slice(start, end).map((e, num) => {
       return `
         <div class="card glass">
-          <span class="card-close glass">
-            <img data-id="${e.id}" src="../assets/images/svg/close.svg" alt="close icon" />
-          </span>
           <span class="card-number">${++start || ++num}</span>
           <div class="card-items">
             <div class="card-item">
@@ -57,6 +61,7 @@ const insertCard = async (start = 0, end = 5) => {
       `;
     });
     cardList.innerHTML = insertData.join('');
+    document.querySelectorAll('.card.glass').forEach(e => e.addEventListener('click', openForm));
     return data.length;
   } catch (error) {
     const errorMessage = document.createElement('p');
@@ -90,3 +95,5 @@ paginate.addEventListener('click', (event) => {
     insertCard(value - 5, value);
   }
 });
+
+btnForm.addEventListener('click', openForm);
