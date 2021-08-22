@@ -29,112 +29,7 @@
     </nav>
 
     <!-- ( CARD LIST ) -->
-    <main class="cards">
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">1</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">2</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">3</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">4</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">5</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-    </main>
+    <main id="card-list" class="cards"></main>
 
     <!-- ( FORM MAIN ) -->
     <section id="form" class="container-form">
@@ -223,28 +118,7 @@
       </form>
     </section>
 
-    <section class="pagination">
-      <label>
-        <input type="radio" class="pagination__radio" name="pagination" checked />
-        <div class="pagination__design"></div>
-      </label>
-      <label>
-        <input type="radio" class="pagination__radio" name="pagination" />
-        <div class="pagination__design"></div>
-      </label>
-      <label>
-        <input type="radio" class="pagination__radio" name="pagination" />
-        <div class="pagination__design"></div>
-      </label>
-      <label>
-        <input type="radio" class="pagination__radio" name="pagination" />
-        <div class="pagination__design"></div>
-      </label>
-      <label>
-        <input type="radio" class="pagination__radio" name="pagination" />
-        <div class="pagination__design"></div>
-      </label>
-    </section>
+    <section id="paginate" class="pagination"></section>
 
     <footer class="tabs glass">
       <a href="./users.view.html" class="tab-item">
@@ -277,6 +151,7 @@
     </footer>
 
     <script src="../js/utils/form-control.js"></script>
+    <script src="../js/controllers/users.controller.js" type="module"></script>
     <script src="../js/utils/vanilla-tilt.js"></script>
   </body>
 </html>
