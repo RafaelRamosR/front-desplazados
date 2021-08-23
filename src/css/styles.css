@@ -18,6 +18,9 @@
   --bg-image: url(../assets/images/svg/light-theme.svg);
   --font-color-title: #0e153a;
   --font-color-subtitle: #292922;
+  --bg-bad: 208, 2, 27;
+  --bg-good: 25, 135, 84;
+  --bg-glass: 255, 255, 255;
 }
 
 body {
@@ -30,12 +33,12 @@ body {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(var(--bg-glass), 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(var(--bg-glass), 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,5 +48,9 @@ body {
     --bg-image: url(../assets/images/svg/dark-theme.svg);
     --font-color-title: #e2f3f5;
     --font-color-subtitle: #f0f0f0;
+  }
+
+  .invert {
+    filter: invert(1);
   }
 }
