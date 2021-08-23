@@ -6,6 +6,7 @@ const $ = (e) => document.getElementById(e);
 const cardList = $('card-list');
 const btnForm = $('btn-form');
 const formContainer = $('form-container');
+const trash = $('trash');
 
 // public
 const openForm = (isReset = false) => {
@@ -35,6 +36,35 @@ const initialDataForm = async (path, id) => {
     }
   });
 };
+
+// public
+const createAlert = (responseType) => {
+  const alertConfig = {
+    bad: {
+      icon: 'sad',
+      msg: '!Upps¡ Ha sucedido un error.',
+    },
+    good: {
+      icon: 'happy',
+      msg: '¡Muy bien! Operación exitosa.'
+    }
+  };
+  const alert = document.createElement('div');
+  alert.className = `alert__content alert__content--${responseType} glass`;
+  alert.innerHTML = `
+    <p>${alertConfig[responseType].msg}</p>
+    <img
+      class="invert"
+      src="../assets/images/svg/${alertConfig[responseType].icon}.svg"
+      alt="${responseType} response"
+      width="30"
+      height="30"
+    >
+  `;
+  fragment.appendChild(alert);
+  trash.appendChild(fragment);
+  setTimeout(() => trash.removeChild(alert), 3000);
+}
 
 // private
 const paginateGenerate = (length) => {
@@ -117,6 +147,7 @@ const initialState = async (view) => {
 };
 
 export {
+  createAlert,
   initialState,
   insertCard,
   openForm,

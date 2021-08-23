@@ -1,3 +1,5 @@
+import { createAlert } from "../controllers/base.controller.js";
+
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
 export const getDataService = async (path) => {
@@ -6,7 +8,6 @@ export const getDataService = async (path) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    const message = `Ha ocurrido un error: ${error}`;
-    throw new Error(message);
+    createAlert('bad');
   }
 }
