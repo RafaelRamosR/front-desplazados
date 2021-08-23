@@ -43,64 +43,85 @@
         </div>
 
         <div class="control-input">
-          <select
-            class="control-input__field"
-            name="id_tipo_identificacion"
-          >
-            <option value="1">Cédula de ciudadanía</option>
-            <option value="2">Tarjeta de identidad</option>
-          </select>
-          <input
-            class="control-input__field"
-            name="num_documento"
-            placeholder="Número de documento"
-            class="control-input__field"
-            type="number"
-          />
+          <label class="control-input__label"
+            >Selector de país:
+            <select class="control-input__field" name="id_tipo_identificacion">
+              <option value="1">Cédula de ciudadanía</option>
+              <option value="2">Tarjeta de identidad</option>
+            </select>
+          </label>
+          <label class="control-input__label">
+            Nombre completo:
+            <input
+              class="control-input__field"
+              name="num_documento"
+              placeholder="Número de documento"
+              class="control-input__field"
+              type="number"
+            />
+          </label>
         </div>
 
         <div class="control-input">
-          <input
-            class="control-input__field"
-            name="nombre"
-            placeholder="Nombre completo"
-            class="control-input__field"
-            type="text"
-          />
-          <select class="control-input__field" name="id_sexo">
-            <option value="1">Femenino</option>
-            <option value="2">Masculino</option>
-            <option value="3">Otro</option>
-          </select>
+          <label class="control-input__label"
+            >Nombre completo
+            <input
+              class="control-input__field"
+              name="nombre"
+              placeholder="Nombre completo"
+              class="control-input__field"
+              type="text"
+            />
+          </label>
+          <label class="control-input__label"
+            >Género
+            <select class="control-input__field" name="id_sexo">
+              <option value="1">Femenino</option>
+              <option value="2">Masculino</option>
+              <option value="3">Otro</option>
+            </select>
+          </label>
         </div>
 
         <div class="control-input">
-          <input
-            class="control-input__field"
-            name="fecha_nacimiento"
-            class="control-input__field"
-            type="date"
-          />
-          <select class="control-input__field" name="id_municipio_residencia">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
-          </select>
+          <label class="control-input__label"
+            >Fecha de nacimiento
+            <input
+              class="control-input__field"
+              name="fecha_nacimiento"
+              class="control-input__field"
+              type="date"
+            />
+          </label>
+          <label class="control-input__label"
+            >Municipio de residencia
+            <select class="control-input__field" name="id_municipio_residencia">
+              <option value="1">Atlántico - Barranquilla</option>
+              <option value="2">Bolivar - Cartagena</option>
+              <option value="3">Cesar - Cesar</option>
+            </select>
+          </label>
         </div>
 
         <div class="control-input">
-          <select class="control-input__field" name="id_municipio_nacimiento">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
-          </select>
-          <input
-            class="control-input__field"
-            name="direccion"
-            placeholder="Dirección de residencia"
-            class="control-input__field"
-            type="text"
-          />
+          <label class="control-input__label"
+            >Municipio de nacimiento
+            <select class="control-input__field" name="id_municipio_nacimiento">
+              <option value="1">Atlántico - Barranquilla</option>
+              <option value="2">Bolivar - Cartagena</option>
+              <option value="3">Cesar - Cesar</option>
+            </select>
+          </label>
+          <label class="control-input__label"
+            >Dirección de residencia
+            <input
+              class="control-input__field"
+              name="direccion"
+              placeholder="Dirección de residencia"
+              class="control-input__field"
+              type="text"
+            />
+          </label>
         </div>
 
         <div class="control-submit">
@@ -120,7 +141,13 @@
     <!-- ( ALERT AND TRASH ZONE ) -->
     <section id="trash" class="alert">
       <div class="alert__content trash">
-        <img class="invert" src="../assets/images/svg/trash.svg" alt="Trash icon" width="50" height="50">
+        <img
+          class="invert"
+          src="../assets/images/svg/trash.svg"
+          alt="Trash icon"
+          width="50"
+          height="50"
+        />
         <p>ELIMINAR ELEMENTO</p>
       </div>
     </section>
