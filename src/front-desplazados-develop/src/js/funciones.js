@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   get_all_documentos();
   get_all_sexos();
   get_all_municipios();
-  add_persona();
+
 });
 
 
@@ -76,30 +76,39 @@ function guardar_formulario() {
 
 
 function add_persona() {
+  datos=$("#add_persona").serialize();
+
+
 	$.ajax({
-		url: BASE_URL+'add_persona()',
+		url: BASE_URL+'add_persona',
 		type: 'POST',
 		dataType: 'json',
-		data: {},
+		data: datos,
 	})
+
 	.done(function(r) {
-		$("#recibe_data").html(r.data);
+		console.log(r);
+
+
 	});
 }
 
 
 
-function get_persona(id) {
+function get_all_personas(id) {
 	$.ajax({
-		url: BASE_URL+'get_persona',
+		url: BASE_URL+'get_all_personas',
 		type: 'POST',
 		dataType: 'json',
 		data: {id:id},
 	})
 	.done(function(r) {
 		$("#nombre").val(r.data.nombre);
-		$("#apellido").val(r.data.apellido);
-		$("#celular").val(r.data.celular);
+		$("#documento").val(r.data.documento);
+		$("#sexo").val(r.data.sexo);
+    $("#municipio").val(r.data.nombre);
+		$("#apellidos").val(r.data.apellidos);
+		$("#sexo").val(r.data.sexo);
 
 	});
 }
