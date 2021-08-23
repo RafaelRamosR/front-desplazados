@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SIDC - Usuarios</title>
+    <title>Desplazados app - Usuarios</title>
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
   </head>
   <body>
     <!-- ( NAVBAR ) -->
@@ -23,195 +24,131 @@
     </nav>
 
     <!-- ( CARD LIST ) -->
-    <main class="cards">
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">1</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">2</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">3</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">4</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">5</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-    </main>
+    <main id="card-list" class="cards"></main>
 
     <!-- ( FORM MAIN ) -->
-    <div id="form" class="container-form">
-      <form class="form" autocomplete="off">
+    <section id="form-container" class="container-form">
+      <form id="main-form" class="form" autocomplete="off">
         <div class="form__content-logo">
           <img
-            class="form__logo"
+            class="form__logo invert"
             src="../assets/images/users.png"
-            alt="form logo"
+            alt="Login logo"
           />
         </div>
 
         <div class="control-input">
-          <select
-            class="control-input__field"
-            id="identic-type"
-            name="identic-type"
-          >
-            <option value="1">Cédula de ciudadanía</option>
-            <option value="2">Tarjeta de identidad</option>
-          </select>
-          <input
-            class="control-input__field"
-            id="document-number"
-            name="document-number"
-            placeholder="Número de documento"
-            type="number"
-          />
+          <label class="control-input__label"
+            >Tipo de documento
+            <select class="control-input__field" name="id_tipo_identificacion">
+              <option value="1">Cédula de ciudadanía</option>
+              <option value="2">Tarjeta de identidad</option>
+            </select>
+          </label>
+          <label class="control-input__label">
+            Número de identidad
+            <input
+              class="control-input__field"
+              name="num_documento"
+              placeholder="Número de documento"
+              class="control-input__field"
+              type="number"
+            />
+          </label>
         </div>
 
         <div class="control-input">
-          <input
-            class="control-input__field"
-            id="name"
-            name="name"
-            placeholder="Nombre completo"
-            type="text"
-          />
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Femenino</option>
-            <option value="2">Masculino</option>
-            <option value="3">Otro</option>
-          </select>
+          <label class="control-input__label"
+            >Nombre completo
+            <input
+              class="control-input__field"
+              name="nombre"
+              placeholder="Nombre completo"
+              class="control-input__field"
+              type="text"
+            />
+          </label>
+          <label class="control-input__label"
+            >Género
+            <select class="control-input__field" name="id_sexo">
+              <option value="1">Femenino</option>
+              <option value="2">Masculino</option>
+              <option value="3">Otro</option>
+            </select>
+          </label>
         </div>
 
         <div class="control-input">
-          <input
-            class="control-input__field"
-            name="birthday-date"
-            type="date"
-          />
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
-          </select>
+          <label class="control-input__label"
+            >Fecha de nacimiento
+            <input
+              class="control-input__field"
+              name="fecha_nacimiento"
+              class="control-input__field"
+              type="date"
+            />
+          </label>
+          <label class="control-input__label"
+            >Municipio de residencia
+            <select class="control-input__field" name="id_municipio_residencia">
+              <option value="1">Atlántico - Barranquilla</option>
+              <option value="2">Bolivar - Cartagena</option>
+              <option value="3">Cesar - Cesar</option>
+            </select>
+          </label>
         </div>
 
         <div class="control-input">
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
-          </select>
-          <input
-            class="control-input__field"
-            id="direction"
-            name="direction"
-            placeholder="Dirección de residencia"
-            type="text"
-          />
+          <label class="control-input__label"
+            >Municipio de nacimiento
+            <select class="control-input__field" name="id_municipio_nacimiento">
+              <option value="1">Atlántico - Barranquilla</option>
+              <option value="2">Bolivar - Cartagena</option>
+              <option value="3">Cesar - Cesar</option>
+            </select>
+          </label>
+          <label class="control-input__label"
+            >Dirección de residencia
+            <input
+              class="control-input__field"
+              name="direccion"
+              placeholder="Dirección de residencia"
+              class="control-input__field"
+              type="text"
+            />
+          </label>
         </div>
 
         <div class="control-submit">
           <input
             class="btn control-submit__btn"
+            class="control-input__field"
             type="submit"
             value="Aceptar"
           />
+          <a class="btn control-submit__btn" href="../index.html">Cancelar</a>
         </div>
       </form>
-    </div>
+    </section>
 
+    <!-- ( PAGINATE ) -->
+    <section id="paginate" class="pagination"></section>
+
+    <!-- ( ALERT AND TRASH ZONE ) -->
+    <section id="trash" class="alert">
+      <div class="alert__content trash">
+        <img
+          class="invert"
+          src="../assets/images/svg/trash.svg"
+          alt="Trash icon"
+          width="50"
+          height="50"
+        />
+        <p>ELIMINAR ELEMENTO</p>
+      </div>
+    </section>
+
+    <!-- ( BOTTOM NAVBAR ) -->
     <footer class="tabs glass">
       <a href="./users.view.html" class="tab-item">
         <img
@@ -242,7 +179,7 @@
       </a>
     </footer>
 
-    <script src="../js/utils/form-control.js"></script>
-    <script src="../js/utils/vanilla-tilt.js"></script>
+    <script src="../js/utils/sortable.js"></script>
+    <script src="../js/main.js" type="module"></script>
   </body>
 </html>

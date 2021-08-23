@@ -29,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2em 0;
+  margin-bottom: 2em;
   border-radius: 15px;
 }
 
@@ -53,6 +54,7 @@ body {
 
 .control-submit {
   width: 50%;
+  margin-top: 2em;
 }
 
 .control-input__field,
@@ -65,8 +67,15 @@ body {
 }
 
 .control-input__field {
+  width: 100%;
   margin-bottom: 1em;
   padding-left: 1em;
+  box-sizing: border-box;
+}
+
+.control-input__label {
+  font-size: 0.8em;
+  line-height: 2em;
 }
 
 .control-submit__btn {
