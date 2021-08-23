@@ -1,12 +1,12 @@
 export const globalConfig = {
   cadrItemData: {
     users: {
-      name: 'Nombre completo',
-      email: 'Residencia',
-      phone: 'Fecha de nacimiento',
+      nombre: 'Nombre completo',
+      id_municipio_residencia: 'Residencia',
+      fecha_nacimiento: 'Fecha de nacimiento',
     }
   },
   users: {
-    getAllPath: '/users/'
+    getAllPath: 'get_all_personas'
   }
 }

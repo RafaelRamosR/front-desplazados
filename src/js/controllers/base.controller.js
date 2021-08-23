@@ -133,6 +133,7 @@ const insertCard = async (view, start = 0, end = 5) => {
       }));
     return data.length;
   } catch (error) {
+    console.log(error)
     createAlert('bad');
   }
 };
