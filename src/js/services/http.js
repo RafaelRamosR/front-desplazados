@@ -1,5 +1,3 @@
-import { createAlert } from "../controllers/base.controller.js";
-
 const API_URL = 'https://jsonplaceholder.typicode.com';
 
 export const getDataService = async (path) => {
