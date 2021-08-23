@@ -7,6 +7,7 @@ export const globalConfig = {
     }
   },
   users: {
-    getAllPath: 'get_all_personas'
+    getAllPath: 'get_all_personas',
+    addPath: 'add_persona',
   }
 }

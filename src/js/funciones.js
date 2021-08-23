@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
   get_all_documentos();
   get_all_sexos();
   get_all_municipios();
+  add_persona();
 
 });
 
@@ -26,7 +27,7 @@ function get_all_documentos() {
 		data: {},
 	})
 	.done(function(r) {
-		$("#tipo_documentos").html(r.data);
+		$("#id_tipo_documento").html(r.data);
 	});
 
 }
@@ -40,7 +41,7 @@ function get_all_sexos() {
 		data: {},
 	})
 	.done(function(r) {
-		$("#sexos").html(r.data);
+		$("#id_sexo").html(r.data);
 	});
 
 }
@@ -55,8 +56,8 @@ function get_all_municipios() {
 		data: {},
 	})
 	.done(function(r) {
-		$("#municipios_n").html(r.data);
-    $("#municipios_r").html(r.data);
+		$("#id_municipio_nacimiento").html(r.data);
+    $("#id_municipio_residencia").html(r.data);
 	});
 
 }
@@ -76,7 +77,7 @@ function guardar_formulario() {
 
 
 function add_persona() {
-  datos=$("#add_persona").serialize();
+  datos=$("#main-form").serialize();
 
 
 	$.ajax({
