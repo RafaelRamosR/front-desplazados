@@ -133,10 +133,7 @@ const insertCard = async (view, start = 0, end = 5) => {
       }));
     return data.length;
   } catch (error) {
-    const errorMessage = document.createElement('p');
-    errorMessage.innerText = error;
-    fragment.appendChild(errorMessage);
-    cardList.appendChild(fragment);
+    createAlert('bad');
   }
 };
 

@@ -8,6 +8,6 @@ export const getDataService = async (path) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    createAlert('bad');
+    throw Error(error);
   }
 }
