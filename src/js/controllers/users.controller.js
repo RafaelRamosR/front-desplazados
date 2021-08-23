@@ -1,16 +1,17 @@
-import { getDataService } from "../services/http.js";
+import { getDataService } from '../services/http.js';
 
 const $ = (e) => document.getElementById(e);
 const fragment = document.createDocumentFragment();
 const cardList = $('card-list');
 const paginate = $('paginate');
 const btnForm = $('btn-form');
-const form = $('form');
+const formContainer = $('form-container');
+const trash = document.getElementById('trash');
 
 const openForm = () => {
   btnForm.classList.toggle('rotate');
-  form.classList.toggle('active');
-}
+  formContainer.classList.toggle('active');
+};
 
 const paginateGenerate = (length) => {
   const limit = length / 5;
@@ -34,14 +35,14 @@ const paginateGenerate = (length) => {
   }
 
   paginate.innerHTML = paginateRadio;
-}
+};
 
 const insertCard = async (start = 0, end = 5) => {
   try {
     const data = await getDataService('/users');
     const insertData = data.slice(start, end).map((e, num) => {
       return `
-        <div class="card glass">
+        <div class="card glass" data-id="${e.id}">
           <span class="card-number">${++start || ++num}</span>
           <div class="card-items">
             <div class="card-item">
@@ -61,7 +62,12 @@ const insertCard = async (start = 0, end = 5) => {
       `;
     });
     cardList.innerHTML = insertData.join('');
-    document.querySelectorAll('.card.glass').forEach(e => e.addEventListener('click', openForm));
+    document
+      .querySelectorAll('.card.glass')
+      .forEach((e) => e.addEventListener('click', () => {
+        const id = e.getAttribute('data-id');
+        openForm(id);
+      }));
     return data.length;
   } catch (error) {
     const errorMessage = document.createElement('p');
@@ -69,22 +75,30 @@ const insertCard = async (start = 0, end = 5) => {
     fragment.appendChild(errorMessage);
     cardList.appendChild(fragment);
   }
-}
+};
 
 const initialState = async () => {
   const cardLength = await insertCard();
   paginateGenerate(cardLength);
-}
+};
 
-window.addEventListener('load', initialState);
+// Eliminar elementos
+Sortable.create(cardList, {
+  group: 'cardList',
+  sort: false,
+  onStart: () => trash.classList.add('trash-select'),
+  onEnd: () => trash.classList.remove('trash-select'),
+});
 
-cardList.addEventListener('click', async (e) => {
-  const cardId = e.target.dataset.id;
-  if (cardId) {
-    e.target.parentElement.parentElement.remove();
+Sortable.create(trash, {
+  group: 'cardList',
+  onAdd: async (e) => {
+    console.log(e.item.dataset.id);
+    trash.removeChild(e.item);
+    trash.classList.remove('trash-select');
 
     if (!cardList.childElementCount) {
-     await initialState();
+      await initialState();
     }
   }
 });
@@ -97,3 +111,4 @@ paginate.addEventListener('click', (event) => {
 });
 
 btnForm.addEventListener('click', openForm);
+window.addEventListener('load', initialState);
