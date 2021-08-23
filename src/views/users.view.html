@@ -36,7 +36,7 @@
       <form id="main-form" class="form" autocomplete="off">
         <div class="form__content-logo">
           <img
-            class="form__logo"
+            class="form__logo invert"
             src="../assets/images/users.png"
             alt="form logo"
           />
@@ -45,18 +45,16 @@
         <div class="control-input">
           <select
             class="control-input__field"
-            id="identic-type"
-            name="identic-type"
+            name="id_tipo_identificacion"
           >
             <option value="1">Cédula de ciudadanía</option>
             <option value="2">Tarjeta de identidad</option>
           </select>
           <input
             class="control-input__field"
-            id="document-number"
-            name="document-number"
+            name="num_documento"
             placeholder="Número de documento"
-            class="pagination__list-radio"
+            class="control-input__field"
             type="number"
           />
         </div>
@@ -64,13 +62,12 @@
         <div class="control-input">
           <input
             class="control-input__field"
-            id="name"
-            name="name"
+            name="nombre"
             placeholder="Nombre completo"
-            class="pagination__list-radio"
+            class="control-input__field"
             type="text"
           />
-          <select class="control-input__field" id="gender" name="gender">
+          <select class="control-input__field" name="id_sexo">
             <option value="1">Femenino</option>
             <option value="2">Masculino</option>
             <option value="3">Otro</option>
@@ -80,11 +77,11 @@
         <div class="control-input">
           <input
             class="control-input__field"
-            name="birthday-date"
-            class="pagination__list-radio"
+            name="fecha_nacimiento"
+            class="control-input__field"
             type="date"
           />
-          <select class="control-input__field">
+          <select class="control-input__field" name="id_municipio_residencia">
             <option value="1">Atlántico - Barranquilla</option>
             <option value="2">Bolivar - Cartagena</option>
             <option value="3">Cesar - Cesar</option>
@@ -92,17 +89,16 @@
         </div>
 
         <div class="control-input">
-          <select class="control-input__field">
+          <select class="control-input__field" name="id_municipio_nacimiento">
             <option value="1">Atlántico - Barranquilla</option>
             <option value="2">Bolivar - Cartagena</option>
             <option value="3">Cesar - Cesar</option>
           </select>
           <input
             class="control-input__field"
-            id="direction"
-            name="direction"
+            name="direccion"
             placeholder="Dirección de residencia"
-            class="pagination__list-radio"
+            class="control-input__field"
             type="text"
           />
         </div>
@@ -110,7 +106,7 @@
         <div class="control-submit">
           <input
             class="btn control-submit__btn"
-            class="pagination__list-radio"
+            class="control-input__field"
             type="submit"
             value="Aceptar"
           />

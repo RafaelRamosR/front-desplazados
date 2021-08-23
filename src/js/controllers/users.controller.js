@@ -6,11 +6,33 @@ const cardList = $('card-list');
 const paginate = $('paginate');
 const btnForm = $('btn-form');
 const formContainer = $('form-container');
-const trash = document.getElementById('trash');
+const trash = $('trash');
 
-const openForm = () => {
+const openForm = (isReset = false) => {
   btnForm.classList.toggle('rotate');
   formContainer.classList.toggle('active');
+  if (isReset) document.forms['main-form'].reset();
+};
+
+const initialDataForm = async (id) => {
+  const data = await getDataService(`/users/${id}`);
+  const testData = {
+    id: data.id,
+    nombre: data.name,
+    direccion: data.address.street,
+    fecha_nacimiento: '2021-08-17',
+    num_documento: '1042455777',
+    id_municipio_residencia: 2,
+    id_municipio_nacimiento: 2,
+    id_sexo: 2,
+    id_tipo_identificacion: 2,
+  };
+  const mainForm = document.forms['main-form'].elements;
+  Object.keys(testData).map(key => {
+    if (mainForm[key]) {
+      mainForm[key].value = testData[key];
+    }
+  });
 };
 
 const paginateGenerate = (length) => {
@@ -39,6 +61,7 @@ const paginateGenerate = (length) => {
 
 const insertCard = async (start = 0, end = 5) => {
   try {
+    // Insertar las tarjetas en la vista
     const data = await getDataService('/users');
     const insertData = data.slice(start, end).map((e, num) => {
       return `
@@ -62,11 +85,14 @@ const insertCard = async (start = 0, end = 5) => {
       `;
     });
     cardList.innerHTML = insertData.join('');
+
+    // Evento para abrir el formulario y llenar los campos
     document
       .querySelectorAll('.card.glass')
-      .forEach((e) => e.addEventListener('click', () => {
+      .forEach((e) => e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
-        openForm(id);
+        await initialDataForm(id);
+        openForm();
       }));
     return data.length;
   } catch (error) {
@@ -82,7 +108,7 @@ const initialState = async () => {
   paginateGenerate(cardLength);
 };
 
-// Eliminar elementos
+// Arrastrar elementos
 Sortable.create(cardList, {
   group: 'cardList',
   sort: false,
@@ -90,6 +116,7 @@ Sortable.create(cardList, {
   onEnd: () => trash.classList.remove('trash-select'),
 });
 
+// Eliminar elementos
 Sortable.create(trash, {
   group: 'cardList',
   onAdd: async (e) => {
