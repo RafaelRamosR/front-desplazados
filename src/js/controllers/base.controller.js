@@ -20,7 +20,7 @@ const initialDataForm = async (path, id) => {
   const data = await getDataById(path, id);
   console.log(data);
   const mainForm = document.forms['main-form'].elements;
-  Object.keys(testData).map(key => {
+  Object.keys(data).map(key => {
     if (mainForm[key]) {
       mainForm[key].value = data[key];
     }
@@ -118,8 +118,8 @@ const insertCard = async (view, start = 0, end = 5) => {
       .querySelectorAll('.card.glass')
       .forEach((e) => e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
-        console.log(view, globalConfig[view].getAllPath, globalConfig[view], id);
-        await initialDataForm(globalConfig[view].getAllPath, id);
+        console.log(view, globalConfig[view].getById, globalConfig[view], id);
+        await initialDataForm(globalConfig[view].getById, id);
         openForm();
       }));
     return data.length;
