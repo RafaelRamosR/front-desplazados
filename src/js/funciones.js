@@ -23,7 +23,8 @@ function getDataById(path, id, callback) {
     dataType: "json",
     data: { id },
   }).done(function (res) {
-    callback(res);
+    console.log(res)
+    callback(res.data);
   });
 }
 
