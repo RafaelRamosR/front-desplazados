@@ -17,14 +17,15 @@ const openForm = (isReset = false) => {
 
 // private
 const initialDataForm = async (path, id) => {
-  const data = await getDataById(path, id);
-  console.log(data);
-  const mainForm = document.forms['main-form'].elements;
-  Object.keys(data).map(key => {
-    if (mainForm[key]) {
-      mainForm[key].value = data[key];
-    }
-  });
+  const completeForm = (data) => {
+    const mainForm = document.forms['main-form'].elements;
+    Object.keys(data).map(key => {
+      if (mainForm[key]) {
+        mainForm[key].value = data[key];
+      }
+    });
+  }
+  getDataById(path, id, completeForm);
 };
 
 // public
