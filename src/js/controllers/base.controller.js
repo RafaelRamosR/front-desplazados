@@ -100,7 +100,7 @@ const cardItemGenerate = (cadrItemData, apiData) => {
 const insertCard = async (view, start = 0, end = 5) => {
   try {
     // Insertar las tarjetas en la vista
-    const data = await getDataService('/users');
+    const data = await getDataService(view);
     const cadrItemData = globalConfig.cadrItemData[view];
     const insertData = data.slice(start, end).map((e, num) => {
       const cardItems = cardItemGenerate(cadrItemData, data[start]);
@@ -126,7 +126,6 @@ const insertCard = async (view, start = 0, end = 5) => {
       }));
     return data.length;
   } catch (error) {
-    console.log(error)
     createAlert('bad');
   }
 };
