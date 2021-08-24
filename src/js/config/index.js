@@ -1,9 +1,9 @@
 export const globalConfig = {
   cadrItemData: {
     users: {
-      id_municipio_residencia : 'Residencia',
-      fecha_nacimiento        : 'Fecha de nacimiento',
       nombre                  : 'Nombre completo',
+      municipio_residencia    : 'Residencia',
+      fecha_nacimiento        : 'Fecha de nacimiento',
     },
     motive: {
       motivo                   : 'Motivo desplazamiento',
