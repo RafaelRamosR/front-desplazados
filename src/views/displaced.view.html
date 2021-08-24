@@ -10,144 +10,101 @@
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/card.css" />
     <link rel="stylesheet" href="../css/tools.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!--(NAVBAR)-->
-    <nav class="navbar">
-      <a href="../index.html">
-        <img
-          src="../assets/images/svg/logo.svg"
-          alt="logo"
-          width="50"
-          height="50"
-        />
-      </a>
-      <span id="btn-form" class="card-open glass rotate">
-        <img src="../assets/images/svg/close.svg" alt="close icon" />
-      </span>
-    </nav>
-    <!-- (CAR LIST)-->
-    <main id="card-list" class="cards"></main>
+  <nav class="navbar">
+    <a href="../index.html">
+      <img src="../assets/images/svg/logo.svg" alt="logo" width="50" height="50" />
+    </a>
+    <span id="btn-form" class="card-open glass rotate">
+      <img src="../assets/images/svg/close.svg" alt="close icon" />
+    </span>
+  </nav>
+  <!-- (CAR LIST)-->
+  <main id="card-list" class="cards"> </main>
 
-    <!-- FORM MAIN-->
-    <section id="form-container" class="container-form">
-      <form id="main-form" class="form" autocomplete="off">
-        <div class="form__content-logo">
-          <img
-            class="form__logo invert"
-            src="../assets/images/users.png"
-            alt="Login logo"
-          />
-        </div>
-
-        <div class="control-input">
-          <label class="control-input__label"
-            >Fecha desplazamiento
-            <input
-              class="control-input__field"
-              name="fecha_desplazamiento"
-              class="control-input__field"
-              type="date"
-            />
-          </label>
-        </div>
-        <div class="control-input">
-          <label class="control-input__label"
-            >motivo de desplazamiento
-            <select
-              class="control-input__field"
-              name="id_municipio_desplazamiento"
-            >
-              <option value="1">Najjksksjsjjs</option>
-              <option value="2">jsjsksksklll</option>
-              <option value="3">joieiiowiowioio</option>
-            </select>
-          </label>
-        </div>
-        <div class="control-input">
-          <label class="control-input__label"
-            >Municipio desplazamiento
-            <select
-              class="control-input__field"
-              name="id_municipio_desplazamiento"
-            >
-              <option value="1">Atlántico - Barranquilla</option>
-              <option value="2">Bolivar - Cartagena</option>
-              <option value="3">Cesar - Cesar</option>
-            </select>
-          </label>
-        </div>
-        <div class="control-input">
-          <label class="control-input__label"
-            >Observacion
-            <textarea
-              class="control-input__field"
-              name="observacion"
-              class="control-input__field"
-              type="text"
-            >
-            </textarea>
-          </label>
-        </div>
-        <div class="control-submit">
-          <input
-            class="btn control-submit__btn"
-            class="control-input__field"
-            type="submit"
-            value="Aceptar"
-          />
-        </div>
-      </form>
-    </section>
-
-    <!-- ( PAGINATE ) -->
-    <section id="paginate" class="pagination"></section>
-
-    <!-- ( ALERT AND TRASH ZONE ) -->
-    <section id="trash" class="alert">
-      <div class="alert__content trash">
-        <img
-          class="invert"
-          src="../assets/images/svg/trash.svg"
-          alt="Trash icon"
-          width="50"
-          height="50"
-        />
-        <p>ELIMINAR ELEMENTO</p>
+  <!-- FORM MAIN-->
+  <section id="form-container" class="container-form">
+    <form id="main-form" class="form" autocomplete="off">
+      <div class="form__content-logo">
+        <img class="form__logo invert" src="../assets/images/refugee.png" alt="Login logo" />
       </div>
-    </section>
 
-    <!-- ( BOTTOM NAVBAR ) -->
-    <footer class="tabs glass">
-      <a href="./users.view.html" class="tab-item">
-        <img
-          class="invert"
-          src="../assets/images/users.png"
-          alt="usuarios"
-          width="30"
-          height="30"
-        />
-      </a>
-      <a href="./users.view.html" class="tab-item">
-        <img
-          class="invert"
-          src="../assets/images/refugee.png"
-          alt="refugiados"
-          width="30"
-          height="30"
-        />
-      </a>
-      <a href="./users.view.html" class="tab-item">
-        <img
-          class="invert"
-          src="../assets/images/desplazament.png"
-          alt="desplazados"
-          width="30"
-          height="30"
-        />
-      </a>
-    </footer>
-    <script src="../js/utils/sortable.js"></script>
-    <script src="../js/main.js" type="module"></script>
+      <div class="control-input">
+        <label class="control-input__label">Fecha desplazamiento
+          <input class="control-input__field" name="fecha_desplazamiento" class="control-input__field" type="date" />
+        </label>
+      </div>
+      <div class="control-input">
+        <label class="control-input__label">motivo de desplazamiento
+          <select class="control-input__field" name="id_motivo_desplazamiento">
+            <option value="1">Najjksksjsjjs</option>
+            <option value="2">jsjsksksklll</option>
+            <option value="3">joieiiowiowioio</option>
+          </select>
+        </label>
+      </div>
+      <div class="control-input">
+        <label class="control-input__label">Municipio desplazamiento
+          <select class="control-input__field" name="id_municipio_desplazamiento">
+            <option value="1">Atlántico - Barranquilla</option>
+            <option value="2">Bolivar - Cartagena</option>
+            <option value="3">Cesar - Cesar</option>
+          </select>
+        </label>
+      </div>
+      <div class="control-input">
+        <label class="control-input__label">Observacion
+          <textarea class="control-input__field" name="observacion" type="text">
+       </textarea>
+        </label>
+      </div>
+      <div class="control-input">
+        <label class="control-input__label">Persona
+          <select class="control-input__field" name="id_persona">
+            <option value="1">Paola. Popez</option>
+            <option value="2">Bonga Colon</option>
+            <option value="3">Arroz Seco</option>
+          </select>
+        </label>
+      </div>
+      <div class="control-submit">
+        <input class="btn control-submit__btn" class="control-input__field" type="submit" value="Aceptar" />
+      </div>
+    </form>
+  </section>
+
+  <!-- ( PAGINATE ) -->
+  <section id="paginate" class="pagination"></section>
+
+  <!-- ( ALERT AND TRASH ZONE ) -->
+  <section id="trash" class="alert">
+    <div class="alert__content trash">
+      <img class="invert" src="../assets/images/svg/trash.svg" alt="Trash icon" width="50" height="50" />
+      <p>ELIMINAR ELEMENTO</p>
+    </div>
+  </section>
+
+  <!-- ( BOTTOM NAVBAR ) -->
+  <footer class="tabs glass">
+    <a href="./users.view.html" class="tab-item">
+      <img class="invert" src="../assets/images/users.png" alt="usuarios" width="30" height="30" />
+    </a>
+    <a href="./users.view.html" class="tab-item">
+      <img class="invert" src="../assets/images/refugee.png" alt="refugiados" width="30" height="30" />
+    </a>
+    <a href="./users.view.html" class="tab-item">
+      <img class="invert" src="../assets/images/desplazament.png" alt="desplazados" width="30" height="30" />
+    </a>
+  </footer>
+  <script src="../js/utils/sortable.js"></script>
+  <script src="../js/main.js" type="module"></script>
+  <script src="../js/funciones.js"></script>
   </body>
 </html>
