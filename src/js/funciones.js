@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost/desplazados-main/app/servicios.php?accion=";
+const BASE_URL = 'http://localhost/desplazados-main/app/servicios.php?accion=';
 
 jQuery(document).ready(function ($) {
   get_all_documentos();
@@ -6,95 +6,68 @@ jQuery(document).ready(function ($) {
   get_all_municipios();
 });
 
-function getParameterByName(name) {
-  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    results = regex.exec(location.search);
-  return results === null
-    ? ""
-    : decodeURIComponent(results[1].replace(/\+/g, " "));
+function handlerSubmit(path, alertCallback) {
+  const formData = $('#main-form').serialize();
+
+  $.ajax({
+    url      : BASE_URL + path,
+    type     : 'POST',
+    dataType : 'json',
+    data     : formData,
+  })
+  .done(alertCallback('good'));
 }
 
 function getDataById(path, id, callback) {
   $.ajax({
-    url: BASE_URL + path,
-    type: "POST",
-    dataType: "json",
-    data: { id },
-  }).done(function (res) {
-    console.log(res)
-    callback(res.data);
+    url      : BASE_URL + path,
+    type     : 'POST',
+    dataType : 'json',
+    data     : { id },
+  }).done(() => callback(res.data));
+}
+
+function deleteData(id, path) {
+  $.ajax({
+    url      : BASE_URL + path,
+    type     : 'POST',
+    dataType : 'json',
+    data     : { id },
+  }).done(function (r) {
+    console.log(r);
   });
 }
 
 function get_all_documentos() {
   $.ajax({
-    url: BASE_URL + "get_all_documentos",
-    type: "POST",
-    dataType: "json",
+    url: BASE_URL + 'get_all_documentos',
+    type: 'POST',
+    dataType: 'json',
     data: {},
   }).done(function (r) {
-    $("#id_tipo_documento").html(r.data);
+    $('#id_tipo_documento').html(r.data);
   });
 }
 
 function get_all_sexos() {
   $.ajax({
-    url: BASE_URL + "get_all_sexos",
-    type: "POST",
-    dataType: "json",
+    url: BASE_URL + 'get_all_sexos',
+    type: 'POST',
+    dataType: 'json',
     data: {},
   }).done(function (r) {
-    $("#id_sexo").html(r.data);
+    $('#id_sexo').html(r.data);
   });
 }
 
 function get_all_municipios() {
   $.ajax({
-    url: BASE_URL + "get_all_municipios",
-    type: "POST",
-    dataType: "json",
+    url: BASE_URL + 'get_all_municipios',
+    type: 'POST',
+    dataType: 'json',
     data: {},
   }).done(function (r) {
-    $("#id_municipio_nacimiento").html(r.data);
-    $("#id_municipio_residencia").html(r.data);
+    $('#id_municipio_nacimiento').html(r.data);
+    $('#id_municipio_residencia').html(r.data);
   });
 }
-
-function add_data(path) {
-  const datos = $("#main-form").serialize();
-
-  $.ajax({
-    url: BASE_URL + path,
-    type: "POST",
-    dataType: "json",
-    data: datos,
-  })
-  .done(function (r) {
-    console.log(r);
-  });
-}
-
-function modificar_formulario() {
-  $.ajax({
-    url: BASE_URL + "update_persona",
-    type: "POST",
-    dataType: "json",
-    data: $("#main-form").serialize(),
-  }).done(function (r) {
-    console.log(r);
-  });
-}
-
-function delete_data(id, path) {
-  $.ajax({
-    url: BASE_URL + path,
-    type: "POST",
-    dataType: "json",
-    data: { id },
-  })
-  .done(function (r) {
-    console.log(r);
-  });
-}
-

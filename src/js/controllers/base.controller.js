@@ -25,6 +25,7 @@ const initialDataForm = async (path, id) => {
       }
     });
   }
+  // funciones.js
   getDataById(path, id, completeForm);
 };
 
@@ -119,8 +120,8 @@ const insertCard = async (view, start = 0, end = 5) => {
       .querySelectorAll('.card.glass')
       .forEach((e) => e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
-        console.log(view, globalConfig[view].getById, globalConfig[view], id);
-        await initialDataForm(globalConfig[view].getById, id);
+        console.log(view, globalConfig[view].readByIdPath, globalConfig[view], id);
+        await initialDataForm(globalConfig[view].readByIdPath, id);
         openForm();
       }));
     return data.length;

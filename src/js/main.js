@@ -4,8 +4,9 @@ import { globalConfig } from "./config/index.js";
 const $ = (e) => document.getElementById(e);
 const CURRENT_PATH = window.location.pathname.split('.view.html')[0].split('/')[3];
 const cardList = $('card-list');
-const paginate = $('paginate');
 const btnForm = $('btn-form');
+const mainForm = $('main-form');
+const paginate = $('paginate');
 const trash = $('trash');
 
 // Arrastrar elementos
@@ -21,7 +22,8 @@ Sortable.create(trash, {
   group: 'cardList',
   onAdd: async (e) => {
     const id = e.item.dataset.id;
-    delete_data(id, globalConfig[CURRENT_PATH].deletePath);
+    // funciones.js
+    deleteData(id, globalConfig[CURRENT_PATH].deletePath);
     trash.removeChild(e.item);
     trash.classList.remove('trash-select');
 
@@ -31,11 +33,21 @@ Sortable.create(trash, {
   }
 });
 
+// Paginación
 paginate.addEventListener('click', (event) => {
   if (event.target.value) {
     const value = event.target.value;
     insertCard(CURRENT_PATH, value - 5, value);
   }
+});
+
+// Agregar y modificar
+mainForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
+  // funciones.js
+  handlerSubmit(globalConfig[CURRENT_PATH][actionPath]);
+  openForm(true);
 });
 
 btnForm.addEventListener('click', openForm);
