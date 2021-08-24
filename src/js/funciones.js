@@ -62,17 +62,6 @@ function get_all_municipios() {
   });
 }
 
-function guardar_formulario() {
-  $.ajax({
-    url: BASE_URL + "guardar",
-    type: "POST",
-    dataType: "json",
-    data: $("#formulario").serialize(),
-  }).done(function (r) {
-    console.log(r);
-  });
-}
-
 function add_persona() {
   const datos = $("#main-form").serialize();
 
@@ -87,29 +76,15 @@ function add_persona() {
   });
 }
 
-function get_all_personas(id) {
-  $.ajax({
-    url: BASE_URL + "get_all_personas",
-    type: "POST",
-    dataType: "json",
-    data: { id: id },
-  }).done(function (r) {
-    $("#nombre").val(r.data.nombre);
-    $("#num_documento").val(r.data.num_documento);
-    $("#id_sexo").val(r.data.id_sexo);
-    $("#id_municipio_residencia").val(r.data.id_municipio_residencia);
-    $("#id_municipio_nacimiento").val(r.data.id_municipio_nacimiento);
-    $("#direccion").val(r.data.direccion);
-  });
-}
-
 function modificar_formulario() {
-  const id = getParameterByName("q");
+  const id=$("input[name='id']").value;
+  console.log(id);
+
   $.ajax({
-    url: BASE_URL + "modificar&id=" + id,
+    url: BASE_URL + "update_persona",
     type: "POST",
     dataType: "json",
-    data: $("#formulario").serialize(),
+    data: $("#main-form").serialize(),
   }).done(function (r) {
     console.log(r);
   });
