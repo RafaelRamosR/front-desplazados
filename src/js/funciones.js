@@ -61,11 +61,11 @@ function get_all_municipios() {
   });
 }
 
-function add_persona() {
+function add_data(path) {
   const datos = $("#main-form").serialize();
 
   $.ajax({
-    url: BASE_URL + "add_persona",
+    url: BASE_URL + path,
     type: "POST",
     dataType: "json",
     data: datos,
@@ -97,3 +97,4 @@ function delete_data(id, path) {
     console.log(r);
   });
 }
+
