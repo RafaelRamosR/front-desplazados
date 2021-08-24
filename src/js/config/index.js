@@ -6,12 +6,12 @@ export const globalConfig = {
       nombre                  : 'Nombre completo',
     },
     motive: {
-      motivo_desplazamiento : 'Motivo desplazamiento',
+      motivo                   : 'Motivo desplazamiento',
     },
     displaced: {
-      id_persona                  : 'Nombre completo',
-      id_municipio_desplazamiento : 'Lugar de desplazamiento',
-      fecha_desplazamiento        : 'Fecha de desplazamiento',
+      nombre_persona           : 'Nombre completo',
+      municipio_desplazamiento : 'Lugar de desplazamiento',
+      fecha_desplazamiento     : 'Fecha de desplazamiento',
     }
   },
   users: {
@@ -23,7 +23,7 @@ export const globalConfig = {
   },
   motive: {
     createPath   : 'add_motivo_desplazamiento',
-    readAllPath  : 'get_all_motivo_desplazamiento',
+    readAllPath  : 'get_all_motivo_desplazamiento_obj',
     readByIdPath : 'get_motivo_desplazamiento',
     updatePath   : 'update_motivo_desplazamiento',
     deletePath   : 'delete_motivo_desplazamiento',
