@@ -1,5 +1,5 @@
 import { globalConfig } from "../config/index.js";
-import { getDataService } from '../services/http.js';
+import { getDataService, getByIdDataService } from '../services/http.js';
 
 const fragment = document.createDocumentFragment();
 const $ = (e) => document.getElementById(e);
@@ -17,22 +17,11 @@ const openForm = (isReset = false) => {
 
 // private
 const initialDataForm = async (path, id) => {
-  const data = await getDataService(`${path}${id}`);
-  const testData = {
-    id: data.id,
-    nombre: data.name,
-    direccion: data.address.street,
-    fecha_nacimiento: '2021-08-17',
-    num_documento: '1042455777',
-    id_municipio_residencia: 2,
-    id_municipio_nacimiento: 2,
-    id_sexo: 2,
-    id_tipo_identificacion: 2,
-  };
+  const data = await getByIdDataService(path, id);
   const mainForm = document.forms['main-form'].elements;
   Object.keys(testData).map(key => {
     if (mainForm[key]) {
-      mainForm[key].value = testData[key];
+      mainForm[key].value = data[key];
     }
   });
 };
