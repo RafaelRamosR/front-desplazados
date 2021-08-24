@@ -14,7 +14,7 @@ export const getDataService = async (path) => {
   }
 };
 
-export const getByIdDataService = (path, id) => {
+export const getByIdDataService = async (path, id) => {
   try {
     const newPath = path.split('/')[1];
     const response = await fetch(
@@ -24,6 +24,7 @@ export const getByIdDataService = (path, id) => {
         body: { id },
       }
     );
+    const { data } = await response.json();
     return data;
   } catch (error) {
     throw Error(error);
