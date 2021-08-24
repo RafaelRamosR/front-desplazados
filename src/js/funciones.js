@@ -1,10 +1,10 @@
 const BASE_URL = 'http://localhost/desplazados-main/app/servicios.php?accion=';
 
-jQuery(document).ready(function ($) {
-  get_all_documentos();
-  get_all_sexos();
+jQuery(document).ready(() => {
+  createSelect('get_all_documentos', 'id_tipo_documento');
+  createSelect('get_all_sexos', 'id_sexo');
+  createSelect('get_all_motivo_desplazamiento', 'id_motivo_desplazamiento');
   get_all_municipios();
-  get_all_motivo_desplazamiento();
 });
 
 function handlerSubmit(path, alertCallback) {
@@ -40,26 +40,12 @@ function deleteData(id, path, alertCallback) {
   });
 }
 
-function get_all_documentos() {
+function createSelect(path, selectId) {
   $.ajax({
-    url: BASE_URL + 'get_all_documentos',
-    type: 'POST',
-    dataType: 'json',
-    data: {},
-  }).done(function (r) {
-    $('#id_tipo_documento').html(r.data);
-  });
-}
-
-function get_all_sexos() {
-  $.ajax({
-    url: BASE_URL + 'get_all_sexos',
-    type: 'POST',
-    dataType: 'json',
-    data: {},
-  }).done(function (r) {
-    $('#id_sexo').html(r.data);
-  });
+    url      : BASE_URL + path,
+    type     : 'GET',
+    dataType : 'json',
+  }).done((res) => $(`#${selectId}`).html(res.data));
 }
 
 function get_all_municipios() {
@@ -73,15 +59,5 @@ function get_all_municipios() {
     $('#id_municipio_residencia').html(r.data);
     $('#id_municipio_desplazamiento').html(r.data);
 
-  });
-}
-function get_all_motivo_desplazamiento(){
-  $.ajax({
-    url: BASE_URL + 'get_all_motivo_desplazamiento',
-    type: 'POST',
-    dataType: 'json',
-    data: {},
-  }).done(function (r) {
-    $('#id_motivo_desplazamiento').html(r.data);
   });
 }
