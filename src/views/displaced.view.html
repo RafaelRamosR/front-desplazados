@@ -4,188 +4,150 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FORM - DESPLA</title>
+    <title>SIDC - Desplazados</title>
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
   </head>
-
   <body>
+    <!--(NAVBAR)-->
     <nav class="navbar">
-      <img
-        src="../assets/images/svg/logo.svg"
-        alt="logo"
-        width="50"
-        height="50"
-      />
+      <a href="../index.html">
+        <img
+          src="../assets/images/svg/logo.svg"
+          alt="logo"
+          width="50"
+          height="50"
+        />
+      </a>
       <span id="btn-form" class="card-open glass rotate">
         <img src="../assets/images/svg/close.svg" alt="close icon" />
       </span>
     </nav>
-    <main class="cards">
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">1</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
+    <!-- (CAR LIST)-->
+    <main id="card-list" class="cards"></main>
 
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">2</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">3</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">4</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass">
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">5</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Nombre completo</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Residencia</h2>
-            <p class="card-item__content">Soledad, Atlántico</p>
-          </div>
-          <div class="card-item">
-            <h2 class="card-item__title">Fecha de nacimiento</h2>
-            <p class="card-item__content">28/05/1997</p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <div id="form" class="container-form">
-      <form class="form" autocomplete="off">
+    <!-- FORM MAIN-->
+    <section id="form-container" class="container-form">
+      <form id="main-form" class="form" autocomplete="off">
         <div class="form__content-logo">
           <img
-            class="form__logo"
+            class="form__logo invert"
             src="../assets/images/users.png"
-            alt="form logo"
+            alt="Login logo"
           />
         </div>
 
         <div class="control-input">
-          <select class="control-input__field" id="persona" name="persona">
-            <option value="1">Guerrillas Anyis</option>
-            <option value="2">Paracos RAFAEL</option>
-            <option value="2">Tierras LEIDY</option>
-            <option value="2">Amenazas KELLI</option>
-          </select>
-          <input
-            class="control-input__field"
-            name="birthday-date"
-            type="date"
-          />
+          <label class="control-input__label"
+            >Fecha desplazamiento
+            <input
+              class="control-input__field"
+              name="fecha_desplazamiento"
+              class="control-input__field"
+              type="date"
+            />
+          </label>
         </div>
-
         <div class="control-input">
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">Atlántico - Barranquilla</option>
-            <option value="2">Bolivar - Cartagena</option>
-            <option value="3">Cesar - Cesar</option>
-          </select>
-
-          <select class="control-input__field" id="gender" name="gender">
-            <option value="1">AMENAZAS DE MUERTE</option>
-            <option value="2">ESTORCION</option>
-            <option value="3">DESPOJO - TIERRAS</option>
-          </select>
+          <label class="control-input__label"
+            >motivo de desplazamiento
+            <select
+              class="control-input__field"
+              name="id_municipio_desplazamiento"
+            >
+              <option value="1">Najjksksjsjjs</option>
+              <option value="2">jsjsksksklll</option>
+              <option value="3">joieiiowiowioio</option>
+            </select>
+          </label>
         </div>
-
         <div class="control-input">
-          <textarea
-            class="control-input__field"
-            id="observacion"
-            name="observacion"
-            placeholder="Observacion"
-            type="text"
-          >
-          </textarea>
+          <label class="control-input__label"
+            >Municipio desplazamiento
+            <select
+              class="control-input__field"
+              name="id_municipio_desplazamiento"
+            >
+              <option value="1">Atlántico - Barranquilla</option>
+              <option value="2">Bolivar - Cartagena</option>
+              <option value="3">Cesar - Cesar</option>
+            </select>
+          </label>
         </div>
-
+        <div class="control-input">
+          <label class="control-input__label"
+            >Observacion
+            <textarea
+              class="control-input__field"
+              name="observacion"
+              class="control-input__field"
+              type="text"
+            >
+            </textarea>
+          </label>
+        </div>
         <div class="control-submit">
-          <input class="btn control-submit__btn" type="submit" value="Aceptar" />
+          <input
+            class="btn control-submit__btn"
+            class="control-input__field"
+            type="submit"
+            value="Aceptar"
+          />
         </div>
       </form>
-    </div>
+    </section>
 
-    <script src="../js/utils/form-control.js"></script>
-    <script src="../js/utils/vanilla-tilt.js"></script>
+    <!-- ( PAGINATE ) -->
+    <section id="paginate" class="pagination"></section>
+
+    <!-- ( ALERT AND TRASH ZONE ) -->
+    <section id="trash" class="alert">
+      <div class="alert__content trash">
+        <img
+          class="invert"
+          src="../assets/images/svg/trash.svg"
+          alt="Trash icon"
+          width="50"
+          height="50"
+        />
+        <p>ELIMINAR ELEMENTO</p>
+      </div>
+    </section>
+
+    <!-- ( BOTTOM NAVBAR ) -->
+    <footer class="tabs glass">
+      <a href="./users.view.html" class="tab-item">
+        <img
+          class="invert"
+          src="../assets/images/users.png"
+          alt="usuarios"
+          width="30"
+          height="30"
+        />
+      </a>
+      <a href="./users.view.html" class="tab-item">
+        <img
+          class="invert"
+          src="../assets/images/refugee.png"
+          alt="refugiados"
+          width="30"
+          height="30"
+        />
+      </a>
+      <a href="./users.view.html" class="tab-item">
+        <img
+          class="invert"
+          src="../assets/images/desplazament.png"
+          alt="desplazados"
+          width="30"
+          height="30"
+        />
+      </a>
+    </footer>
+    <script src="../js/utils/sortable.js"></script>
+    <script src="../js/main.js" type="module"></script>
   </body>
 </html>
