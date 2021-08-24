@@ -1,8 +1,15 @@
-import { initialState, insertCard, openForm } from "./controllers/base.controller.js";
-import { globalConfig } from "./config/index.js";
+import {
+  createAlert,
+  initialState,
+  insertCard,
+  openForm,
+} from './controllers/base.controller.js';
+import { globalConfig } from './config/index.js';
 
 const $ = (e) => document.getElementById(e);
-const CURRENT_PATH = window.location.pathname.split('.view.html')[0].split('/')[3];
+const CURRENT_PATH = window.location.pathname
+  .split('.view.html')[0]
+  .split('/')[3];
 const cardList = $('card-list');
 const btnForm = $('btn-form');
 const mainForm = $('main-form');
@@ -23,14 +30,14 @@ Sortable.create(trash, {
   onAdd: async (e) => {
     const id = e.item.dataset.id;
     // funciones.js
-    deleteData(id, globalConfig[CURRENT_PATH].deletePath);
+    deleteData(id, globalConfig[CURRENT_PATH].deletePath, createAlert);
     trash.removeChild(e.item);
     trash.classList.remove('trash-select');
 
     if (!cardList.childElementCount) {
       await initialState(CURRENT_PATH);
     }
-  }
+  },
 });
 
 // Paginación
@@ -46,7 +53,7 @@ mainForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
   // funciones.js
-  handlerSubmit(globalConfig[CURRENT_PATH][actionPath]);
+  handlerSubmit(globalConfig[CURRENT_PATH][actionPath], createAlert);
   openForm(true);
 });
 

@@ -27,15 +27,14 @@ function getDataById(path, id, callback) {
   }).done(() => callback(res.data));
 }
 
-function deleteData(id, path) {
+function deleteData(id, path, alertCallback) {
   $.ajax({
     url      : BASE_URL + path,
     type     : 'POST',
     dataType : 'json',
     data     : { id },
-  }).done(function (r) {
-    console.log(r);
-  });
+  })
+  .done(alertCallback('good'));
 }
 
 function get_all_documentos() {
