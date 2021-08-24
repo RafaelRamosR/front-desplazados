@@ -73,6 +73,10 @@ body {
   box-sizing: border-box;
 }
 
+.control-input--line {
+  line-height: 1.5em;
+}
+
 .control-input__label {
   font-size: 0.8em;
   line-height: 2em;
