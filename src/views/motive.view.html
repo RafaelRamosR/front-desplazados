@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/tools.css" />
   </head>
   <body>
     <!-- ( NAVBAR ) -->
@@ -22,106 +23,63 @@
       </span>
     </nav>
 
-    <!-- ( CARD LIST ) -->
-    <main class="cards">
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">1</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Motivo desplazamiento</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">2</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Motivo desplazamiento</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">3</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Motivo desplazamiento</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">4</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Motivo desplazamiento</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card glass" data-tilt>
-        <span class="card-close glass">
-          <img src="../assets/images/svg/close.svg" alt="close icon" />
-        </span>
-        <span class="card-number">5</span>
-        <div class="card-items">
-          <div class="card-item">
-            <h2 class="card-item__title">Motivo desplazamiento</h2>
-            <p class="card-item__content">Rafael Ramos Reales</p>
-          </div>
-        </div>
-      </div>
-
-    </main>
+  <!-- ( CARD LIST ) -->
+  <main id="card-list" class="cards"></main>
 
     <!-- ( FORM MAIN ) -->
-    <div id="form" class="container-form">
-      <form class="form" autocomplete="off">
+    <section id="form-container" class="container-form">
+      <form id="main-form" class="form" autocomplete="off">
         <div class="form__content-logo">
           <img
-            class="form__logo"
-            src="../assets/images/users.png"
-            alt="form logo"
+            class="form__logo invert"
+            src="../assets/images/desplazament.png"
+            alt="Login logo"
           />
         </div>
 
-        <div class="control-input">
-          <input
-            class="control-input__field"
-            id="name"
-            name="name"
-            placeholder="Motivo desplazamiento"
-            type="text"
-          />
+       <div class="control-input">
+          <label class="control-input__label">
+            Motivo desplazamiento
+            <input
+              class="control-input__field"
+              name="motivo"
+              placeholder="Motivo desplazamiento"
+              class="control-input__field"
+              type="text"
+            />
+          </label>
         </div>
 
         <div class="control-submit">
           <input
             class="btn control-submit__btn"
+            class="control-input__field"
             type="submit"
             value="Aceptar"
           />
         </div>
       </form>
-    </div>
+    </section>
 
+     <!-- ( PAGINATE ) -->
+     <section id="paginate" class="pagination"></section>
+
+     <!-- ( ALERT AND TRASH ZONE ) -->
+     <section id="trash" class="alert">
+       <div class="alert__content trash">
+         <img
+           class="invert"
+           src="../assets/images/svg/trash.svg"
+           alt="Trash icon"
+           width="50"
+           height="50"
+         />
+         <p>ELIMINAR ELEMENTO</p>
+       </div>
+     </section>
+
+
+    <!-- ( BOTTOM NAVBAR ) -->
     <footer class="tabs glass">
       <a href="./users.view.html" class="tab-item">
         <img
@@ -152,7 +110,7 @@
       </a>
     </footer>
 
-    <script src="../js/utils/form-control.js"></script>
-    <script src="../js/utils/vanilla-tilt.js"></script>
+    <script src="../js/utils/sortable.js"></script>
+    <script src="../js/main.js" type="module"></script>
   </body>
 </html>
