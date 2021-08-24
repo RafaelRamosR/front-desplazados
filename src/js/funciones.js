@@ -15,7 +15,8 @@ function handlerSubmit(path, alertCallback) {
     dataType : 'json',
     data     : formData,
   })
-  .done(alertCallback('good'));
+  .done(alertCallback('good'))
+  .error(alertCallback('bad'));
 }
 
 function getDataById(path, id, callback) {
@@ -34,7 +35,8 @@ function deleteData(id, path, alertCallback) {
     dataType : 'json',
     data     : { id },
   })
-  .done(alertCallback('good'));
+  .done(alertCallback('good'))
+  .error(alertCallback('bad'));
 }
 
 function get_all_documentos() {

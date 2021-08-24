@@ -25,7 +25,7 @@ export const globalConfig = {
     createPath   : 'add_motivo_desplazamiento',
     readAllPath  : 'get_all_motivo_desplazamiento',
     readByIdPath : 'get_motivo_desplazamiento',
-    updatePath   : 'update_persona',
+    updatePath   : 'update_motivo_desplazamiento',
     deletePath   : 'delete_motivo_desplazamiento',
   },
   displaced: {
