@@ -17,6 +17,19 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function getDataById(path, id) {
+	$.ajax({
+		url: BASE_URL+path,
+		type: 'POST',
+		dataType: 'json',
+		data: { id },
+	})
+	.done(function(res) {
+		console.log(res);
+		return res;
+	});
+
+}
 
 function get_all_documentos() {
 
