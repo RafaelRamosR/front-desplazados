@@ -93,12 +93,12 @@ const paginateGenerate = (length) => {
 
 // private
 const cardItemGenerate = (cadrItemData, apiData) => {
-  return Object.entries(cadrItemData).map((data, index) => {
+  return Object.entries(cadrItemData).map((data) => {
     const [key, value] = data;
     return `
       <div class="card-item">
         <h2 class="card-item__title">${value}</h2>
-        <p class="card-item__content">${apiData[index][key]}</p>
+        <p class="card-item__content">${apiData[key]}</p>
       </div>
     `
   }).join('');
@@ -110,8 +110,8 @@ const insertCard = async (view, start = 0, end = 5) => {
     // Insertar las tarjetas en la vista
     const data = await getDataService('/users');
     const cadrItemData = globalConfig.cadrItemData[view];
-    const cardItems = cardItemGenerate(cadrItemData, data);
     const insertData = data.slice(start, end).map((e, num) => {
+      const cardItems = cardItemGenerate(cadrItemData, data[start]);
       return `
         <div class="card glass" data-id="${e.id}">
           <span class="card-number">${++start || ++num}</span>
