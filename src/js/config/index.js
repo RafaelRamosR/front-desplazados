@@ -15,21 +15,24 @@ export const globalConfig = {
     }
   },
   users: {
-    addPath: 'add_persona',
+    createPath: 'add_persona',
+    readAllPath: 'get_all_personas',
+    readByIdPath: 'get_persona',
+    updatePath: '',
     deletePath: 'delete_persona',
-    getAllPath: 'get_all_personas',
-    getById: 'get_persona',
   },
   motive: {
-    addPath: 'add_motivo_desplazamiento',
+    createPath: 'add_motivo_desplazamiento',
+    readAllPath: 'get_all_motivo_desplazamiento',
+    readByIdPath: 'get_motivo_desplazamiento',
+    updatePath: '',
     deletePath: 'delete_motivo_desplazamiento',
-    getAllPath: 'get_all_motivo_desplazamiento',
-    getById: 'get_motivo_desplazamiento',
   },
   displaced: {
-    addPath: 'add_desplazado',
+    createPath: 'add_desplazado',
+    readAllPath: 'get_all_desplazados',
+    readByIdPath: 'get_desplazados',
+    updatePath: '',
     deletePath: 'delete_desplazados',
-    getAllPath: 'get_all_desplazados',
-    getById: 'get_desplazados',
   }
 }

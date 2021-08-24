@@ -5,7 +5,7 @@ export const getDataService = async (path) => {
   try {
     const newPath = path.split('/')[1];
     const response = await fetch(
-      `${API_URL}${globalConfig[newPath].getAllPath}`
+      `${API_URL}${globalConfig[newPath].readAllPath}`
     );
     const { data } = await response.json();
     return data;
@@ -17,7 +17,7 @@ export const getDataService = async (path) => {
 export const getByIdDataService = async (path, id) => {
   try {
     const response = await fetch(
-      `${API_URL}${globalConfig[path].getById}`,
+      `${API_URL}${globalConfig[path].readByIdPath}`,
       {
         method: 'POST',
         body: { id },
