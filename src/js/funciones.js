@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
   get_all_documentos();
   get_all_sexos();
   get_all_municipios();
+  get_all_motivo_desplazamiento();
 });
 
 function handlerSubmit(path, alertCallback) {
@@ -70,5 +71,17 @@ function get_all_municipios() {
   }).done(function (r) {
     $('#id_municipio_nacimiento').html(r.data);
     $('#id_municipio_residencia').html(r.data);
+    $('#id_municipio_desplazamiento').html(r.data);
+
+  });
+}
+function get_all_motivo_desplazamiento(){
+  $.ajax({
+    url: BASE_URL + 'get_all_motivo_desplazamiento',
+    type: 'POST',
+    dataType: 'json',
+    data: {},
+  }).done(function (r) {
+    $('#id_motivo_desplazamiento').html(r.data);
   });
 }
