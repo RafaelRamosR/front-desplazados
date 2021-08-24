@@ -8,7 +8,6 @@ jQuery(document).ready(function ($) {
 
 function handlerSubmit(path, alertCallback) {
   const formData = $('#main-form').serialize();
-  console.log('se ejecuta',path);
 
   $.ajax({
     url      : BASE_URL + path,
