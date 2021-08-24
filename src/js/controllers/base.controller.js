@@ -95,6 +95,7 @@ const paginateGenerate = (length) => {
 const cardItemGenerate = (cadrItemData, apiData) => {
   return Object.entries(cadrItemData).map((data, index) => {
     const [key, value] = data;
+    console.log(apiData[index][key]);
     return `
       <div class="card-item">
         <h2 class="card-item__title">${value}</h2>

@@ -77,7 +77,7 @@ function guardar_formulario() {
 
 
 function add_persona() {
-  datos=$("#main-form").serialize();
+  const datos=$("#main-form").serialize();
 
 
 	$.ajax({
@@ -105,11 +105,11 @@ function get_all_personas(id) {
 	})
 	.done(function(r) {
 		$("#nombre").val(r.data.nombre);
-		$("#documento").val(r.data.documento);
-		$("#sexo").val(r.data.sexo);
-    $("#municipio").val(r.data.nombre);
-		$("#apellidos").val(r.data.apellidos);
-		$("#sexo").val(r.data.sexo);
+		$("#num_documento").val(r.data.num_documento);
+		$("#id_sexo").val(r.data.id_sexo);
+    $("#id_municipio_residencia").val(r.data.id_municipio_residencia);
+		$("#id_municipio_nacimiento").val(r.data.id_municipio_nacimiento);
+		$("#direccion").val(r.data.direccion);
 
 	});
 }
@@ -127,3 +127,23 @@ function modificar_formulario() {
 		console.log(r);
 	});
 }
+
+ function delete_persona(id) {
+
+
+	$.ajax({
+		url: BASE_URL+'delete_persona',
+		type: 'POST',
+		dataType: 'json',
+		data:{id}
+	})
+
+	.done(function(r) {
+    console.log(r);
+
+
+
+
+	});
+}
+
