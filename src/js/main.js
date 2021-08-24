@@ -1,5 +1,6 @@
 import { initialState, insertCard, openForm } from "./controllers/base.controller.js";
-//import { delete_persona } from "./funciones.js";
+import { globalConfig } from "./config/index.js";
+
 const $ = (e) => document.getElementById(e);
 const CURRENT_PATH = window.location.pathname.split('.view.html')[0].split('/')[3];
 const cardList = $('card-list');
@@ -19,7 +20,8 @@ Sortable.create(cardList, {
 Sortable.create(trash, {
   group: 'cardList',
   onAdd: async (e) => {
-    delete_persona(e.item.dataset.id);
+    const id = e.item.dataset.id;
+    delete_data(id, globalConfig[CURRENT_PATH].deletePath);
     trash.removeChild(e.item);
     trash.classList.remove('trash-select');
 

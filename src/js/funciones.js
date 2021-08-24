@@ -4,7 +4,6 @@ jQuery(document).ready(function ($) {
   get_all_documentos();
   get_all_sexos();
   get_all_municipios();
-  add_persona();
 });
 
 function getParameterByName(name) {
@@ -77,9 +76,6 @@ function add_persona() {
 }
 
 function modificar_formulario() {
-  const id=$("input[name='id']").value;
-  console.log(id);
-
   $.ajax({
     url: BASE_URL + "update_persona",
     type: "POST",
@@ -90,9 +86,9 @@ function modificar_formulario() {
   });
 }
 
-function delete_persona(id) {
+function delete_data(id, path) {
   $.ajax({
-    url: BASE_URL + "delete_persona",
+    url: BASE_URL + path,
     type: "POST",
     dataType: "json",
     data: { id },
