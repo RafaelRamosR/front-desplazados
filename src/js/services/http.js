@@ -16,14 +16,14 @@ export const getDataService = async (path) => {
 
 export const getByIdDataService = async (path, id) => {
   try {
-    const newPath = path.split('/')[1];
     const response = await fetch(
-      `${API_URL}${globalConfig[newPath].getById}`,
+      `${API_URL}${globalConfig[path].getById}`,
       {
         method: 'POST',
         body: { id },
       }
     );
+    console.log(response)
     const { data } = await response.json();
     return data;
   } catch (error) {
