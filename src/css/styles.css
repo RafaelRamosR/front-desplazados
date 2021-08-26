@@ -1,11 +1,4 @@
 @font-face {
-  font-family: "Montserrat Alternates";
-  src: url("../assets/fonts/MontserratAlternates-Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Raleway;
   src: url("../assets/fonts/Raleway-Regular.ttf");
   font-weight: normal;
@@ -21,6 +14,8 @@
   --bg-bad: 208, 2, 27;
   --bg-good: 25, 135, 84;
   --bg-glass: 255, 255, 255;
+  --ff-title: Helvetica;
+  --ff-common: Raleway;
 }
 
 body {
@@ -28,7 +23,7 @@ body {
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--ff-common), sans-serif;
   color: var(--font-color-subtitle);
 }
 
@@ -65,7 +60,7 @@ body {
 }
 
 .title {
-  font-family: Raleway;
+  font-family: var(--ff-title), Arial, sans-serif;
   font-size: 1.2rem;
   text-align: center;
 }

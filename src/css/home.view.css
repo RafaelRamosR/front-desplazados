@@ -6,9 +6,8 @@
   grid-row-gap: 2em;
 }
 
-.card-menu__title,
 .main-title {
-  font-family: Raleway;
+  font-family: var(--ff-title), Arial, sans-serif;
 }
 
 .text-center {
