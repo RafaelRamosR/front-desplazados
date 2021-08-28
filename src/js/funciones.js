@@ -7,11 +7,12 @@ jQuery(document).ready(() => {
   createSelect('get_all_municipios', 'id_municipio_nacimiento');
   createSelect('get_all_municipios', 'id_municipio_residencia');
   createSelect('get_all_municipios', 'id_municipio_desplazamiento');
+  createSelect('get_all_personas_option', 'id_persona');
 });
 
 function handlerSubmit(path, alertCallback) {
   const formData = $('#main-form').serialize();
-
+console.log(formData,path)
   $.ajax({
     url      : BASE_URL + path,
     type     : 'POST',

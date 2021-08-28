@@ -16,14 +16,14 @@ export const globalConfig = {
   },
   users: {
     createPath   : 'add_persona',
-    readAllPath  : 'get_all_personas',
+    readAllPath  : 'get_all_personas_option',
     readByIdPath : 'get_persona',
     updatePath   : 'update_persona',
     deletePath   : 'delete_persona',
   },
   motive: {
     createPath   : 'add_motivo_desplazamiento',
-    readAllPath  : 'get_all_motivo_desplazamiento_obj',
+    readAllPath  : 'get_all_motivo_desplazamiento_json',
     readByIdPath : 'get_motivo_desplazamiento',
     updatePath   : 'update_motivo_desplazamiento',
     deletePath   : 'delete_motivo_desplazamiento',

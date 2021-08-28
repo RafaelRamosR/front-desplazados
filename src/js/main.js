@@ -54,6 +54,7 @@ mainForm.addEventListener('submit', (e) => {
   const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
   // funciones.js
   handlerSubmit(globalConfig[CURRENT_PATH][actionPath], createAlert);
+  insertCard(CURRENT_PATH);
   openForm(true);
 });
 
