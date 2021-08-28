@@ -4,7 +4,9 @@ jQuery(document).ready(() => {
   createSelect('get_all_documentos', 'id_tipo_documento');
   createSelect('get_all_sexos', 'id_sexo');
   createSelect('get_all_motivo_desplazamiento', 'id_motivo_desplazamiento');
-  get_all_municipios();
+  createSelect('get_all_municipios', 'id_municipio_nacimiento');
+  createSelect('get_all_municipios', 'id_municipio_residencia');
+  createSelect('get_all_municipios', 'id_municipio_desplazamiento');
 });
 
 function handlerSubmit(path, alertCallback) {
@@ -41,23 +43,11 @@ function deleteData(id, path, alertCallback) {
 }
 
 function createSelect(path, selectId) {
-  $.ajax({
-    url      : BASE_URL + path,
-    type     : 'GET',
-    dataType : 'json',
-  }).done((res) => $(`#${selectId}`).html(res.data));
-}
-
-function get_all_municipios() {
-  $.ajax({
-    url: BASE_URL + 'get_all_municipios',
-    type: 'POST',
-    dataType: 'json',
-    data: {},
-  }).done(function (r) {
-    $('#id_municipio_nacimiento').html(r.data);
-    $('#id_municipio_residencia').html(r.data);
-    $('#id_municipio_desplazamiento').html(r.data);
-
-  });
+  if (document.getElementById(selectId)) {
+    $.ajax({
+      url      : BASE_URL + path,
+      type     : 'GET',
+      dataType : 'json',
+    }).done((res) => $(`#${selectId}`).html(res.data));
+  }
 }
