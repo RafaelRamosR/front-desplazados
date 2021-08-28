@@ -12,7 +12,6 @@ jQuery(document).ready(() => {
 
 function handlerSubmit(path, alertCallback) {
   const formData = $('#main-form').serialize();
-console.log(formData,path)
   $.ajax({
     url      : BASE_URL + path,
     type     : 'POST',

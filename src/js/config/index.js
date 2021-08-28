@@ -16,7 +16,7 @@ export const globalConfig = {
   },
   users: {
     createPath   : 'add_persona',
-    readAllPath  : 'get_all_personas_option',
+    readAllPath  : 'get_all_personas',
     readByIdPath : 'get_persona',
     updatePath   : 'update_persona',
     deletePath   : 'delete_persona',

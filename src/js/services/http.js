@@ -22,7 +22,6 @@ export const getByIdDataService = async (path, id) => {
         body: { id },
       }
     );
-    console.log(response)
     const { data } = await response.json();
     return data;
   } catch (error) {

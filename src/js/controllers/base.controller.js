@@ -120,7 +120,6 @@ const insertCard = async (view, start = 0, end = 5) => {
       .querySelectorAll('.card.glass')
       .forEach((e) => e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
-        console.log(view, globalConfig[view].readByIdPath, globalConfig[view], id);
         await initialDataForm(globalConfig[view].readByIdPath, id);
         openForm();
       }));
