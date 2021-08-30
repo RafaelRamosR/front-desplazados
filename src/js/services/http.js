@@ -67,3 +67,22 @@ export const createSelect = async (path, selectId) => {
     console.log(`Hubo un error: ${error}. Esto debería ser un logger.`);
   }
 };
+
+export const handlerSubmit = async (path, actionPath) => {
+  try {
+    const formData = new FormData(document.getElementById('main-form'));
+    const response = await fetch(
+      `${API_URL}${globalConfig[path][actionPath]}`,
+      {
+        method: 'POST',
+        body: formData,
+      }
+    );
+
+    if (response.ok) {
+      createAlert('good');
+    }
+  } catch (error) {
+    createAlert('bad');
+  }
+};

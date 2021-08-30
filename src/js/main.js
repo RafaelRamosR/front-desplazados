@@ -1,7 +1,9 @@
-import { globalConfig } from './config/index.js';
-import { createSelect, deleteDataService } from "./services/http.js";
+import { 
+  createSelect, 
+  deleteDataService, 
+  handlerSubmit 
+} from "./services/http.js";
 import {
-  createAlert,
   initialState,
   insertCard,
   openForm,
@@ -52,8 +54,7 @@ paginate.addEventListener('click', (event) => {
 mainForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
-  // funciones.js
-  handlerSubmit(globalConfig[CURRENT_PATH][actionPath], createAlert);
+  handlerSubmit(CURRENT_PATH, actionPath);
   insertCard(CURRENT_PATH);
   openForm(true);
 });
