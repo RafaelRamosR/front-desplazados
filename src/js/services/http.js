@@ -15,11 +15,14 @@ export const getDataService = async (path) => {
 
 export const getByIdDataService = async (path, id) => {
   try {
+    console.log(path)
+    const form = new FormData();
+    form.append('id', id);
     const response = await fetch(
       `${API_URL}${globalConfig[path].readByIdPath}`,
       {
         method: 'POST',
-        body: { id },
+        body:  form,
       }
     );
     const { data } = await response.json();

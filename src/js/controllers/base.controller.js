@@ -1,5 +1,5 @@
 import { globalConfig } from "../config/index.js";
-import { getDataService } from '../services/http.js';
+import { getDataService, getByIdDataService } from '../services/http.js';
 
 const fragment = document.createDocumentFragment();
 const $ = (e) => document.getElementById(e);
@@ -17,16 +17,13 @@ const openForm = (isReset = false) => {
 
 // private
 const initialDataForm = async (path, id) => {
-  const completeForm = (data) => {
-    const mainForm = document.forms['main-form'].elements;
-    Object.keys(data).map(key => {
-      if (mainForm[key]) {
-        mainForm[key].value = data[key];
-      }
-    });
-  }
-  // funciones.js
-  getDataById(path, id, completeForm);
+  const data = await getByIdDataService(path, id);
+  const mainForm = document.forms['main-form'].elements;
+  Object.keys(data).map(key => {
+    if (mainForm[key]) {
+      mainForm[key].value = data[key];
+    }
+  });
 };
 
 // public
@@ -120,7 +117,7 @@ const insertCard = async (view, start = 0, end = 5) => {
       .querySelectorAll('.card.glass')
       .forEach((e) => e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
-        await initialDataForm(globalConfig[view].readByIdPath, id);
+        await initialDataForm(view, id);
         openForm();
       }));
     return data.length;
