@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost/desplazados-main/app/servicios.php?accion=';
 
-jQuery(document).ready(() => {
+/*jQuery(document).ready(() => {
   createSelect('get_all_documentos', 'id_tipo_documento');
   createSelect('get_all_sexos', 'id_sexo');
   createSelect('get_all_motivo_desplazamiento', 'id_motivo_desplazamiento');
@@ -9,7 +9,7 @@ jQuery(document).ready(() => {
   createSelect('get_all_municipios', 'id_municipio_desplazamiento');
   createSelect('get_all_personas_option', 'id_persona');
 });
-
+*/
 function handlerSubmit(path, alertCallback) {
   const formData = $('#main-form').serialize();
   $.ajax({

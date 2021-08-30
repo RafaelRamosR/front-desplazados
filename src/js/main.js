@@ -1,5 +1,5 @@
 import { globalConfig } from './config/index.js';
-import { deleteDataService } from "./services/http.js";
+import { createSelect, deleteDataService } from "./services/http.js";
 import {
   createAlert,
   initialState,
@@ -59,4 +59,13 @@ mainForm.addEventListener('submit', (e) => {
 });
 
 btnForm.addEventListener('click', openForm);
-window.addEventListener('load', initialState(CURRENT_PATH));
+window.addEventListener('DOMContentLoaded', initialState(CURRENT_PATH));
+window.addEventListener('load', () => {
+  createSelect('get_all_documentos', 'id_tipo_documento');
+  createSelect('get_all_sexos', 'id_sexo');
+  createSelect('get_all_motivo_desplazamiento', 'id_motivo_desplazamiento');
+  createSelect('get_all_municipios', 'id_municipio_nacimiento');
+  createSelect('get_all_municipios', 'id_municipio_residencia');
+  createSelect('get_all_municipios', 'id_municipio_desplazamiento');
+  createSelect('get_all_personas_option', 'id_persona');
+});

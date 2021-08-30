@@ -52,3 +52,18 @@ export const deleteDataService = async (id, path) => {
     createAlert('bad');
   }
 };
+
+export const createSelect = async (path, selectId) => {
+  try {
+    const inputSelect = document.getElementById(selectId);
+    if (inputSelect) {
+      const response = await fetch(
+        `${API_URL}${path}`
+      );
+      const { data } = await response.json();
+      inputSelect.innerHTML = data;
+    }
+  } catch (error) {
+    console.log(`Hubo un error: ${error}. Esto debería ser un logger.`);
+  }
+};
