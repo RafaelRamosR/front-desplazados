@@ -1,0 +1,28 @@
+{
+  "name": "front-desplazados",
+  "version": "1.0.0",
+  "description": "Sistema integrado de desplazados colombianos ()\u001b[D\u001b[C\u001b[Dfake project)",
+  "main": "main.js",
+  "scripts": {
+    "test": "\u001b[A\u001b[B",
+    "build": "rm -rf dist && webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelRamosR/front-desplazados.git"
+  },
+  "keywords": [
+    "desplazados"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RafaelRamosR/front-desplazados/issues"
+  },
+  "homepage": "https://github.com/RafaelRamosR/front-desplazados#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
