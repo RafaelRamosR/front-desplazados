@@ -1,10 +1,11 @@
+import { globalConfig } from './config/index.js';
+import { deleteDataService } from "./services/http.js";
 import {
   createAlert,
   initialState,
   insertCard,
   openForm,
 } from './controllers/base.controller.js';
-import { globalConfig } from './config/index.js';
 
 const $ = (e) => document.getElementById(e);
 const CURRENT_PATH = window.location.pathname
@@ -29,8 +30,7 @@ Sortable.create(trash, {
   group: 'cardList',
   onAdd: async (e) => {
     const id = e.item.dataset.id;
-    // funciones.js
-    deleteData(id, globalConfig[CURRENT_PATH].deletePath, createAlert);
+    deleteDataService(id, CURRENT_PATH);
     trash.removeChild(e.item);
     trash.classList.remove('trash-select');
 
