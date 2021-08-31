@@ -3,28 +3,48 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // mode
-  mode: 'production', // 'production' | 'development' | 'none'
-  // entry point
-  // string | object | array
+  // mode: 'development',
+  // entry
   entry: {
-    app: './src/js/main',
-    jquery: './src/js/funciones',
+    app: './src/js/main.js',
+    sortable: './src/js/utils/sortable.js'
   },
-  // output point
+  // output
   output: {
-    path: path.resolve(__dirname, 'dist'), // string (default)
     filename: '[name].bundle.js', // string (default)
-    assetModuleFilename: 'images/[hash][ext][query]',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  // module
   // plugins
   plugins: [
     new HtmlWebpackPlugin({
-      // Also generate a test.html
-      filename: 'test.html',
+      filename: 'index.html',
       template: 'src/index.html',
-      hash: true,
       inject: 'body',
+      minify: true,
+      hash: true,
     }),
-  ],
+    new HtmlWebpackPlugin({
+      filename: 'views/users.view.html',
+      template: 'src/views/users.view.html',
+      inject: 'body',
+      minify: true,
+      hash: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'views/motive.view.html',
+      template: 'src/views/motive.view.html',
+      inject: 'body',
+      minify: true,
+      hash: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'views/displaced.view.html',
+      template: 'src/views/displaced.view.html',
+      inject: 'body',
+      minify: true,
+      hash: true,
+    })
+  ]
 };
