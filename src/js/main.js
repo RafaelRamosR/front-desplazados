@@ -1,8 +1,8 @@
-import { 
-  createSelect, 
-  deleteDataService, 
-  handlerSubmit 
-} from "./services/http.js";
+import {
+  createSelect,
+  deleteDataService,
+  handlerSubmit
+} from './services/http.js';
 import {
   initialState,
   insertCard,

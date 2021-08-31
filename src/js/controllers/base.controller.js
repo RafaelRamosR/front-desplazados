@@ -1,4 +1,4 @@
-import { globalConfig } from "../config/index.js";
+import { globalConfig } from '../config/index.js';
 import { getDataService, getByIdDataService } from '../services/http.js';
 
 const fragment = document.createDocumentFragment();
@@ -19,7 +19,7 @@ const openForm = (isReset = false) => {
 const initialDataForm = async (path, id) => {
   const data = await getByIdDataService(path, id);
   const mainForm = document.forms['main-form'].elements;
-  Object.keys(data).map(key => {
+  Object.keys(data).map((key) => {
     if (mainForm[key]) {
       mainForm[key].value = data[key];
     }
@@ -35,8 +35,8 @@ const createAlert = (responseType) => {
     },
     good: {
       icon: 'happy',
-      msg: '¡Muy bien! Operación exitosa.'
-    }
+      msg: '¡Muy bien! Operación exitosa.',
+    },
   };
   const alert = document.createElement('div');
   alert.className = `alert__content alert__content--${responseType} glass`;
@@ -53,7 +53,7 @@ const createAlert = (responseType) => {
   fragment.appendChild(alert);
   trash.appendChild(fragment);
   setTimeout(() => trash.removeChild(alert), 3000);
-}
+};
 
 // private
 const paginateGenerate = (length) => {
@@ -82,16 +82,18 @@ const paginateGenerate = (length) => {
 
 // private
 const cardItemGenerate = (cadrItemData, apiData) => {
-  return Object.entries(cadrItemData).map((data) => {
-    const [key, value] = data;
-    return `
-      <div class="card-item">
-        <h2 class="card-item__title">${value}</h2>
-        <p class="card-item__content">${apiData[key]}</p>
-      </div>
-    `
-  }).join('');
-}
+  return Object.entries(cadrItemData)
+    .map((data) => {
+      const [key, value] = data;
+      return `
+        <div class="card-item">
+          <h2 class="card-item__title">${value}</h2>
+          <p class="card-item__content">${apiData[key]}</p>
+        </div>
+      `;
+    })
+    .join('');
+};
 
 // public
 const insertCard = async (view, start = 0, end = 5) => {
@@ -113,13 +115,13 @@ const insertCard = async (view, start = 0, end = 5) => {
     cardList.innerHTML = insertData.join('');
 
     // Evento para abrir el formulario y llenar los campos
-    document
-      .querySelectorAll('.card.glass')
-      .forEach((e) => e.addEventListener('click', async () => {
+    document.querySelectorAll('.card.glass').forEach((e) =>
+      e.addEventListener('click', async () => {
         const id = e.getAttribute('data-id');
         await initialDataForm(view, id);
         openForm();
-      }));
+      })
+    );
     return data.length;
   } catch (error) {
     createAlert('bad');
@@ -132,9 +134,4 @@ const initialState = async (view) => {
   paginateGenerate(cardLength);
 };
 
-export {
-  createAlert,
-  initialState,
-  insertCard,
-  openForm,
-}
+export { createAlert, initialState, insertCard, openForm };
