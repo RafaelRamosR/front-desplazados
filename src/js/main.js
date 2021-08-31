@@ -51,11 +51,11 @@ paginate.addEventListener('click', (event) => {
 });
 
 // Agregar y modificar
-mainForm.addEventListener('submit', (e) => {
+mainForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
-  handlerSubmit(CURRENT_PATH, actionPath);
-  insertCard(CURRENT_PATH);
+  await handlerSubmit(CURRENT_PATH, actionPath);
+  await insertCard(CURRENT_PATH);
   openForm(true);
 });
 
