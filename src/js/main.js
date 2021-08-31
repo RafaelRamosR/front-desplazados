@@ -1,10 +1,13 @@
 import {
-  createAlert,
+  createSelect,
+  deleteDataService,
+  handlerSubmit
+} from './services/http.js';
+import {
   initialState,
   insertCard,
   openForm,
 } from './controllers/base.controller.js';
-import { globalConfig } from './config/index.js';
 
 const $ = (e) => document.getElementById(e);
 const CURRENT_PATH = window.location.pathname
@@ -29,8 +32,7 @@ Sortable.create(trash, {
   group: 'cardList',
   onAdd: async (e) => {
     const id = e.item.dataset.id;
-    // funciones.js
-    deleteData(id, globalConfig[CURRENT_PATH].deletePath, createAlert);
+    deleteDataService(id, CURRENT_PATH);
     trash.removeChild(e.item);
     trash.classList.remove('trash-select');
 
@@ -49,13 +51,22 @@ paginate.addEventListener('click', (event) => {
 });
 
 // Agregar y modificar
-mainForm.addEventListener('submit', (e) => {
+mainForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const actionPath = mainForm[0].value ? 'updatePath' : 'createPath';
-  // funciones.js
-  handlerSubmit(globalConfig[CURRENT_PATH][actionPath], createAlert);
+  await handlerSubmit(CURRENT_PATH, actionPath);
+  await insertCard(CURRENT_PATH);
   openForm(true);
 });
 
 btnForm.addEventListener('click', openForm);
-window.addEventListener('load', initialState(CURRENT_PATH));
+window.addEventListener('DOMContentLoaded', initialState(CURRENT_PATH));
+window.addEventListener('load', () => {
+  createSelect('get_all_documentos', 'id_tipo_documento');
+  createSelect('get_all_sexos', 'id_sexo');
+  createSelect('get_all_motivo_desplazamiento', 'id_motivo_desplazamiento');
+  createSelect('get_all_municipios', 'id_municipio_nacimiento');
+  createSelect('get_all_municipios', 'id_municipio_residencia');
+  createSelect('get_all_municipios', 'id_municipio_desplazamiento');
+  createSelect('get_all_personas_option', 'id_persona');
+});
