@@ -1,4 +1,4 @@
-import { globalConfig } from '../config/index.js';
+import { globalConfig } from '../config/config.js';
 import { getDataService, getByIdDataService } from '../services/http.js';
 
 const fragment = document.createDocumentFragment();

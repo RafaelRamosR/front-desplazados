@@ -1,4 +1,4 @@
-import { globalConfig } from '../config/index.js';
+import { globalConfig } from '../config/config.js';
 import { createAlert } from '../controllers/base.controller.js';
 const API_URL = 'http://localhost/desplazados-main/app/servicios.php?accion=';
 
