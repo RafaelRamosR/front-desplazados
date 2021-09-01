@@ -12,7 +12,7 @@ import {
 const $ = (e) => document.getElementById(e);
 const CURRENT_PATH = window.location.pathname
   .split('.view.html')[0]
-  .split('/')[3];
+  .split('/')[2];
 const cardList = $('card-list');
 const btnForm = $('btn-form');
 const mainForm = $('main-form');

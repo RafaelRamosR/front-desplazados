@@ -1,6 +1,7 @@
 import { globalConfig } from '../config/config.js';
 import { createAlert } from '../controllers/base.controller.js';
-const API_URL = 'http://localhost/desplazados-main/app/servicios.php?accion=';
+
+const API_URL = 'https://desplazados.serviciostic.net/app/servicios.php?accion=';
 
 export const getDataService = async (path) => {
   try {

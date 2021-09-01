@@ -27,11 +27,11 @@ const initialDataForm = async (path, id) => {
 };
 
 // public
-const createAlert = (responseType) => {
+const createAlert = (responseType, msg = '') => {
   const alertConfig = {
     bad: {
       icon: 'sad',
-      msg: '!Upps¡ Ha sucedido un error.',
+      msg: msg || '!Upps¡ Ha sucedido un error.',
     },
     good: {
       icon: 'happy',
@@ -95,6 +95,7 @@ const cardItemGenerate = (cadrItemData, apiData) => {
     .join('');
 };
 
+    console.log('epa')
 // public
 const insertCard = async (view, start = 0, end = 5) => {
   try {
@@ -113,7 +114,6 @@ const insertCard = async (view, start = 0, end = 5) => {
       `;
     });
     cardList.innerHTML = insertData.join('');
-
     // Evento para abrir el formulario y llenar los campos
     document.querySelectorAll('.card.glass').forEach((e) =>
       e.addEventListener('click', async () => {
@@ -124,7 +124,7 @@ const insertCard = async (view, start = 0, end = 5) => {
     );
     return data.length;
   } catch (error) {
-    createAlert('bad');
+    createAlert('bad', `${window.location.pathname} ::: ${window.location.toString()}`);
   }
 };
 
