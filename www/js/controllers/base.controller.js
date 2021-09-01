@@ -27,11 +27,11 @@ const initialDataForm = async (path, id) => {
 };
 
 // public
-const createAlert = (responseType, msg = '') => {
+const createAlert = (responseType) => {
   const alertConfig = {
     bad: {
       icon: 'sad',
-      msg: msg || '!Upps¡ Ha sucedido un error.',
+      msg: '!Upps¡ Ha sucedido un error.',
     },
     good: {
       icon: 'happy',
@@ -95,7 +95,6 @@ const cardItemGenerate = (cadrItemData, apiData) => {
     .join('');
 };
 
-    console.log('epa')
 // public
 const insertCard = async (view, start = 0, end = 5) => {
   try {
@@ -124,7 +123,7 @@ const insertCard = async (view, start = 0, end = 5) => {
     );
     return data.length;
   } catch (error) {
-    createAlert('bad', `${window.location.pathname} ::: ${window.location.toString()}`);
+    createAlert('bad');
   }
 };
 

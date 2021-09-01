@@ -9,10 +9,11 @@ import {
   openForm,
 } from './controllers/base.controller.js';
 
+// De esto depende la app xd
+const PATH = window.location.pathname.split('views/');
+const CURRENT_PATH = PATH[PATH.length - 1].split('.')[0];
+
 const $ = (e) => document.getElementById(e);
-const CURRENT_PATH = window.location.pathname
-  .split('.view.html')[0]
-  .split('/')[2];
 const cardList = $('card-list');
 const btnForm = $('btn-form');
 const mainForm = $('main-form');
